@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/growthedge/static/css/main.6214c2cd.css",
-    "main.js": "/growthedge/static/js/main.cc928b9f.js",
+    "main.css": "/growthedge/static/css/main.8c9709c6.css",
+    "main.js": "/growthedge/static/js/main.430c33b8.js",
     "static/js/453.cdea9578.chunk.js": "/growthedge/static/js/453.cdea9578.chunk.js",
     "static/media/work5.png": "/growthedge/static/media/work5.daf1bf6f669573c35f72.png",
     "static/media/work3.png": "/growthedge/static/media/work3.92a71b25b5bc78a2269c.png",
@@ -61,12 +61,12 @@
     "static/media/zap.svg": "/growthedge/static/media/zap.3c8cd2d78618e051e6b69196cb11334c.svg",
     "static/media/trending_dark.svg": "/growthedge/static/media/trending_dark.cb342444b352908fd85b328d87a4894e.svg",
     "static/media/trending.svg": "/growthedge/static/media/trending.c14016c700ce02a60a732e853af0496f.svg",
-    "main.6214c2cd.css.map": "/growthedge/static/css/main.6214c2cd.css.map",
-    "main.cc928b9f.js.map": "/growthedge/static/js/main.cc928b9f.js.map",
+    "main.8c9709c6.css.map": "/growthedge/static/css/main.8c9709c6.css.map",
+    "main.430c33b8.js.map": "/growthedge/static/js/main.430c33b8.js.map",
     "453.cdea9578.chunk.js.map": "/growthedge/static/js/453.cdea9578.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6214c2cd.css",
-    "static/js/main.cc928b9f.js"
+    "static/css/main.8c9709c6.css",
+    "static/js/main.430c33b8.js"
   ]
 }
