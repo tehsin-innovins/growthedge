@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/growthedge/static/css/main.b5855eba.css",
-    "main.js": "/growthedge/static/js/main.86c534da.js",
+    "main.css": "/growthedge/static/css/main.9387965e.css",
+    "main.js": "/growthedge/static/js/main.c6beecb8.js",
     "static/js/453.e63cd7e3.chunk.js": "/growthedge/static/js/453.e63cd7e3.chunk.js",
     "static/media/analytics.png": "/growthedge/static/media/analytics.e84a7d7f9dc2aa081117.png",
+    "static/media/use_case.png": "/growthedge/static/media/use_case.84feb3d6e3f3af44f0ae.png",
     "static/media/aprove.png": "/growthedge/static/media/aprove.673d4e36496455a6a389.png",
     "static/media/work5.png": "/growthedge/static/media/work5.daf1bf6f669573c35f72.png",
     "static/media/work3.png": "/growthedge/static/media/work3.92a71b25b5bc78a2269c.png",
@@ -27,6 +28,10 @@
     "static/media/header_bg.svg": "/growthedge/static/media/header_bg.69c925abef1138b0252b.svg",
     "static/media/deliver5.png": "/growthedge/static/media/deliver5.a8ade44ab38add6e860d.png",
     "static/media/solution2.png": "/growthedge/static/media/solution2.6faf2b71e262e1f26eb4.png",
+    "static/media/b4.svg": "/growthedge/static/media/b4.bcedcec5bf97c30c40b6a6c5603f3c52.svg",
+    "static/media/b1.svg": "/growthedge/static/media/b1.b2999a2429ff840e3d2e94ce372b3813.svg",
+    "static/media/b2.svg": "/growthedge/static/media/b2.12962396d2ecaaf66da8014dbdcbbb36.svg",
+    "static/media/b3.svg": "/growthedge/static/media/b3.0c6a5072d5bd921fbac664b291c02892.svg",
     "static/media/solution4.png": "/growthedge/static/media/solution4.d09f9400ae168b95922c.png",
     "static/media/solution1.png": "/growthedge/static/media/solution1.4d3b705e4f5a63879307.png",
     "static/media/about.png": "/growthedge/static/media/about.870ce215715837d0cafd.png",
@@ -61,6 +66,7 @@
     "static/media/process3.svg": "/growthedge/static/media/process3.fdff9e3d11db0048f8f83f46e9759820.svg",
     "static/media/process2.svg": "/growthedge/static/media/process2.11959a3ec94d22b84e6c2d4909d78cae.svg",
     "static/media/user.svg": "/growthedge/static/media/user.66e01f4146d22f5ca5cb0d69c5517215.svg",
+    "static/media/send.svg": "/growthedge/static/media/send.8136a7c7be95d5a90c7a2496011611fb.svg",
     "static/media/arrow_right.svg": "/growthedge/static/media/arrow_right.10f1f8f2697925341c4346aa4e781fc1.svg",
     "static/media/process1.svg": "/growthedge/static/media/process1.a061ad52c36d6de1631d24c1fb40c9c7.svg",
     "static/media/arrow_left.svg": "/growthedge/static/media/arrow_left.e6ce7ac99c9b208f42048ef734b3859b.svg",
@@ -69,12 +75,12 @@
     "static/media/zap.svg": "/growthedge/static/media/zap.3c8cd2d78618e051e6b69196cb11334c.svg",
     "static/media/trending_dark.svg": "/growthedge/static/media/trending_dark.cb342444b352908fd85b328d87a4894e.svg",
     "static/media/trending.svg": "/growthedge/static/media/trending.c14016c700ce02a60a732e853af0496f.svg",
-    "main.b5855eba.css.map": "/growthedge/static/css/main.b5855eba.css.map",
-    "main.86c534da.js.map": "/growthedge/static/js/main.86c534da.js.map",
+    "main.9387965e.css.map": "/growthedge/static/css/main.9387965e.css.map",
+    "main.c6beecb8.js.map": "/growthedge/static/js/main.c6beecb8.js.map",
     "453.e63cd7e3.chunk.js.map": "/growthedge/static/js/453.e63cd7e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5855eba.css",
-    "static/js/main.86c534da.js"
+    "static/css/main.9387965e.css",
+    "static/js/main.c6beecb8.js"
   ]
 }
