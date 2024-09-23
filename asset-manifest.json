@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/growthedge/static/css/main.dace04b8.css",
+    "main.css": "/growthedge/static/css/main.1c4840c2.css",
     "main.js": "/growthedge/static/js/main.76845932.js",
     "static/js/453.e63cd7e3.chunk.js": "/growthedge/static/js/453.e63cd7e3.chunk.js",
     "static/media/analytics.png": "/growthedge/static/media/analytics.e84a7d7f9dc2aa081117.png",
@@ -55,12 +55,12 @@
     "static/media/sun.svg": "/growthedge/static/media/sun.aa29e611190556bb1cfca1039f583833.svg",
     "static/media/sunrise_dark.svg": "/growthedge/static/media/sunrise_dark.bc0a1adeda164deb8d181ab7b9ff5819.svg",
     "static/media/sunrise.svg": "/growthedge/static/media/sunrise.fb49723cf1cbe9564bbf1148a7d83b9d.svg",
+    "index.html": "/growthedge/index.html",
     "static/media/process4.svg": "/growthedge/static/media/process4.f7936f50aaee42fd424934549f596f9a.svg",
     "static/media/call.svg": "/growthedge/static/media/call.673916da0753d12dab36aa513d5c21a9.svg",
     "static/media/process3.svg": "/growthedge/static/media/process3.fdff9e3d11db0048f8f83f46e9759820.svg",
     "static/media/process2.svg": "/growthedge/static/media/process2.11959a3ec94d22b84e6c2d4909d78cae.svg",
     "static/media/user.svg": "/growthedge/static/media/user.66e01f4146d22f5ca5cb0d69c5517215.svg",
-    "index.html": "/growthedge/index.html",
     "static/media/arrow_right.svg": "/growthedge/static/media/arrow_right.10f1f8f2697925341c4346aa4e781fc1.svg",
     "static/media/process1.svg": "/growthedge/static/media/process1.a061ad52c36d6de1631d24c1fb40c9c7.svg",
     "static/media/arrow_left.svg": "/growthedge/static/media/arrow_left.e6ce7ac99c9b208f42048ef734b3859b.svg",
@@ -69,12 +69,12 @@
     "static/media/zap.svg": "/growthedge/static/media/zap.3c8cd2d78618e051e6b69196cb11334c.svg",
     "static/media/trending_dark.svg": "/growthedge/static/media/trending_dark.cb342444b352908fd85b328d87a4894e.svg",
     "static/media/trending.svg": "/growthedge/static/media/trending.c14016c700ce02a60a732e853af0496f.svg",
-    "main.dace04b8.css.map": "/growthedge/static/css/main.dace04b8.css.map",
+    "main.1c4840c2.css.map": "/growthedge/static/css/main.1c4840c2.css.map",
     "main.76845932.js.map": "/growthedge/static/js/main.76845932.js.map",
     "453.e63cd7e3.chunk.js.map": "/growthedge/static/js/453.e63cd7e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dace04b8.css",
+    "static/css/main.1c4840c2.css",
     "static/js/main.76845932.js"
   ]
 }
