@@ -1,8 +1,10 @@
 {
   "files": {
-    "main.css": "/growthedge/static/css/main.8c9709c6.css",
-    "main.js": "/growthedge/static/js/main.430c33b8.js",
-    "static/js/453.cdea9578.chunk.js": "/growthedge/static/js/453.cdea9578.chunk.js",
+    "main.css": "/growthedge/static/css/main.dace04b8.css",
+    "main.js": "/growthedge/static/js/main.cdfc63c5.js",
+    "static/js/453.e63cd7e3.chunk.js": "/growthedge/static/js/453.e63cd7e3.chunk.js",
+    "static/media/analytics.png": "/growthedge/static/media/analytics.e84a7d7f9dc2aa081117.png",
+    "static/media/aprove.png": "/growthedge/static/media/aprove.673d4e36496455a6a389.png",
     "static/media/work5.png": "/growthedge/static/media/work5.daf1bf6f669573c35f72.png",
     "static/media/work3.png": "/growthedge/static/media/work3.92a71b25b5bc78a2269c.png",
     "static/media/hero-circle.png": "/growthedge/static/media/hero-circle.3bf74113be09c2937a9d.png",
@@ -10,6 +12,9 @@
     "static/media/work2.png": "/growthedge/static/media/work2.2d879e045324714b085b.png",
     "static/media/excel3.png": "/growthedge/static/media/excel3.9070beb5267fb3c87b57.png",
     "static/media/work1.png": "/growthedge/static/media/work1.fe8ae58b04156ba09074.png",
+    "static/media/team2.png": "/growthedge/static/media/team2.d2ba31ecdb65b206c7c3.png",
+    "static/media/data.png": "/growthedge/static/media/data.56b98f14e03096c740b0.png",
+    "static/media/team1.png": "/growthedge/static/media/team1.c7750904e332b3f5d8e6.png",
     "static/media/deliver3.png": "/growthedge/static/media/deliver3.cca9e95a64322c3d8470.png",
     "static/media/excel2.png": "/growthedge/static/media/excel2.e4990a6eb75b238a6a77.png",
     "static/media/excel1.png": "/growthedge/static/media/excel1.361c7a6dd93fc17f567b.png",
@@ -24,8 +29,10 @@
     "static/media/solution2.png": "/growthedge/static/media/solution2.6faf2b71e262e1f26eb4.png",
     "static/media/solution4.png": "/growthedge/static/media/solution4.d09f9400ae168b95922c.png",
     "static/media/solution1.png": "/growthedge/static/media/solution1.4d3b705e4f5a63879307.png",
+    "static/media/about.png": "/growthedge/static/media/about.870ce215715837d0cafd.png",
     "static/media/blog.png": "/growthedge/static/media/blog.0b766d26e3810e2f9a38.png",
     "static/media/goal.png": "/growthedge/static/media/goal.3fe57e5613010b3a2922.png",
+    "static/media/team3.png": "/growthedge/static/media/team3.23f096089980ab3a6151.png",
     "static/media/deliver4.png": "/growthedge/static/media/deliver4.1eec776cb05b4209ef75.png",
     "static/media/testimonials.png": "/growthedge/static/media/testimonials.3df001f9d9588a4ad7ef.png",
     "static/media/work6.png": "/growthedge/static/media/work6.70a54e31cd296ef35172.png",
@@ -37,6 +44,7 @@
     "static/media/excel-bg1.png": "/growthedge/static/media/excel-bg1.0f13d78648f8e03f502b.png",
     "static/media/excel-bg2.png": "/growthedge/static/media/excel-bg2.e517d7093cd382ea9f08.png",
     "static/media/hero-introduction.png": "/growthedge/static/media/hero-introduction.f7a600d0d8b73382ecd3.png",
+    "static/media/life.png": "/growthedge/static/media/life.90c73e4aa69dfcb02a53.png",
     "static/media/logo.svg": "/growthedge/static/media/logo.3190bcae639f740a7cc0ea6b3f4e6506.svg",
     "static/media/footer-logo.svg": "/growthedge/static/media/footer-logo.0c94276de12858859b074153f443fb73.svg",
     "static/media/hoomans.svg": "/growthedge/static/media/hoomans.32747ae9b5b068b14e7fae60f387a921.svg",
@@ -61,12 +69,12 @@
     "static/media/zap.svg": "/growthedge/static/media/zap.3c8cd2d78618e051e6b69196cb11334c.svg",
     "static/media/trending_dark.svg": "/growthedge/static/media/trending_dark.cb342444b352908fd85b328d87a4894e.svg",
     "static/media/trending.svg": "/growthedge/static/media/trending.c14016c700ce02a60a732e853af0496f.svg",
-    "main.8c9709c6.css.map": "/growthedge/static/css/main.8c9709c6.css.map",
-    "main.430c33b8.js.map": "/growthedge/static/js/main.430c33b8.js.map",
-    "453.cdea9578.chunk.js.map": "/growthedge/static/js/453.cdea9578.chunk.js.map"
+    "main.dace04b8.css.map": "/growthedge/static/css/main.dace04b8.css.map",
+    "main.cdfc63c5.js.map": "/growthedge/static/js/main.cdfc63c5.js.map",
+    "453.e63cd7e3.chunk.js.map": "/growthedge/static/js/453.e63cd7e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c9709c6.css",
-    "static/js/main.430c33b8.js"
+    "static/css/main.dace04b8.css",
+    "static/js/main.cdfc63c5.js"
   ]
 }
