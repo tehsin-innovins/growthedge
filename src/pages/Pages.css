@@ -558,7 +558,7 @@
 	border-radius: 0px 100px 0px 0px;
 	padding-bottom: 10px;
 	position: relative;
-	min-height: 100vh; /* Ensures full height */
+	min-height: 90vh; /* Ensures full height */
 }
 
 .goal_section img {
@@ -567,13 +567,14 @@
 	left: 0;
 	right: 0; /* Added for centering */
 	margin: 0 auto; /* Center horizontally */
-	width: 80%;
+	width: 70%;
 	height: auto; /* Ensures responsive image */
 }
 
 .goal_section .imgbox {
 	margin: 0 auto; /* Center the image box */
 	width: 250px;
+	height:auto;
 	position: relative;
 	text-align: center;
 	color: #ffffff;
@@ -581,12 +582,12 @@
 
 .goal_section h4 {
 	position:absolute;
-	bottom:75px;
+	bottom:10.5%;
 	left:0;
 	right:0;
 	margin-bottom: 0;
 	font-family: 'Raleway', sans-serif;
-	font-size: 32.77px;
+	font-size: 30.77px;
 	font-weight: 800;
 	line-height: 1.2; /* Adjusted line height for better readability */
 	letter-spacing: 0.26px;
@@ -596,12 +597,12 @@
 
 .goal_section h5 {
 	position:absolute;
-	bottom:40px;
+	bottom:5.5%;
 	left:0;
 	right:0;
 	margin-top: -30px; /* Adjusted spacing for better alignment */
 	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
+	font-size: 23.5px;
 	font-weight: 800;
 	line-height: 1.2; /* Adjusted line height */
 	letter-spacing: 0.26px;
@@ -611,8 +612,8 @@
 
 .goal_section .img-item1 {
 	position: absolute;
-	right: -38%; /* Adjusted to avoid overflow */
-	top: 58px;
+	right: -32%; /* Adjusted to avoid overflow */
+	top: 51px;
 	text-align: left!important;
 }
 
@@ -629,18 +630,18 @@
 
 .goal_section .img-item1 p{
 font-family: Raleway;
-font-size: 14px;
+font-size: 13px;
 font-weight: 600;
 line-height: 16.44px;
 letter-spacing: 0.20000000298023224px;
 text-align: left;
-margin-top:-5px;
+margin:0;	
 }
 
 .goal_section .img-item2 {
 	position: absolute;
-	left: -38%; /* Adjusted to avoid overflow */
-	top: 140px;
+	left: -32%; /* Adjusted to avoid overflow */
+	top: 120px;
 	text-align: right!important;
 }
 
@@ -657,18 +658,18 @@ margin-top:-5px;
 
 .goal_section .img-item2 p{
 font-family: Raleway;
-font-size: 14px;
+font-size: 13px;
 font-weight: 600;
 line-height: 16.44px;
 letter-spacing: 0.20000000298023224px;
 text-align: right;
-margin-top:-5px;
+margin:0;	
 }
 
 .goal_section .img-item3 {
 	position: absolute;
-	right: -38%; /* Adjusted to avoid overflow */
-	top: 222px;
+	right: -32%; /* Adjusted to avoid overflow */
+	top: 193px;
 	text-align: left!important;
 }
 
@@ -685,19 +686,19 @@ margin-top:-5px;
 
 .goal_section .img-item3 p{
 font-family: Raleway;
-font-size: 14px;
+font-size: 13px;
 font-weight: 600;
 line-height: 16.44px;
 letter-spacing: 0.20000000298023224px;
 text-align: left;
-margin-top:-5px;
+margin:0;	
 }
 
 
 .goal_section .img-item4 {
 	position: absolute;
-	left: -38%; /* Adjusted to avoid overflow */
-	top: 300px;
+	left: -32%; /* Adjusted to avoid overflow */
+	top: 260px;
 	text-align: right!important;
 }
 
@@ -714,12 +715,12 @@ margin-top:-5px;
 
 .goal_section .img-item4 p{
 font-family: Raleway;
-font-size: 14px;
+font-size: 13px;
 font-weight: 600;
 line-height: 16.44px;
 letter-spacing: 0.20000000298023224px;
 text-align: right;
-margin-top:-5px;
+margin:0;	
 }
 
 .same_boat{
