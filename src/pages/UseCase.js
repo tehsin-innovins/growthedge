@@ -213,7 +213,7 @@ function UseCase() {
 							<img src={index % 2 === 0 ? trending : trending_dark} width={15} height={15} alt="Trending Icon" />
 							</div>
 							<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
-							<a href={`/growthedge/usecase/${slide.title}`}>Read case Studies</a>
+							<a href={`/usecase`}>Read case Studies</a>
 						</div>		
 					</div>
 					 ))}
@@ -268,7 +268,7 @@ function UseCase() {
 					
 					{slidesData4.map((slide, index) => (
 					<div className="col-md-3 col-lg-3 mt-2 mb-2 pb-0">
-					<a href={`/growthedge/blog/${slide.title}`}>
+					<a href={`/blog`}>
 						<div className="slider_4_card_4_ card">
 							<img src={blog}/>
 							<div className={`content ${index % 2 === 0 ? 'cardbg4_' : ''}`}>

@@ -1583,6 +1583,10 @@ text-align: left;
 	color:#AA81FB;
 }
 
+.blogs a{
+	text-decoration:none;
+}
+
 .blogs .h5{
 	color:#ffffff;
 	font-family: Raleway;
