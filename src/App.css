@@ -15,7 +15,7 @@ body{
 .preloader{
 	width:100%!important;
 	height:100vh!important;
-	position:relative!important;
+	position:fixed!important;
 	z-index:999!important;
 	background-color:#111012!important;
 }

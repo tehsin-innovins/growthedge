@@ -1127,6 +1127,133 @@ color:#462576;
 	background: #AA81FB;
 }
 
+.modal-bottom-sheet1_{
+  position: fixed;
+  border:0px;
+  border-radius:5px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  margin: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.showBottomsheet_one .modal-bottom-sheet1_ {
+  transform: translateY(0);
+}
+
+.modal-bottom-sheet1_ .modal-content .modal-header,
+.modal-bottom-sheet1_ .modal-content .modal-body{
+	background: #2B2A2C!important;	
+	border:0px!important;
+	outline:0px;
+}
+
+.modal-bottom-sheet1_ .modal-title{
+	color:#ffffff!important;
+	width:100%;
+	text-align:center!important;
+}
+
+.modal-bottom-sheet1_ .btn-close1{
+	position:absolute;
+	font-size:18px;
+	top:20px;
+	right:20px;
+	color:#ffffff!important;
+}
+
+.modal-bottom-sheet1_ .modal-title span{
+	color:#BC66EE!important;
+}
+
+.modal-bottom-sheet1_ .btn{
+	width: 100%;
+	color:#ffffff;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius: 8px;
+	background: #AA81FB;
+}
+
+.modal-bottom-sheet1_ .contact_img{
+	margin-top:55px;
+	width:100%;
+}
+
+.modal-bottom-sheet1_ .title{
+	font-family: Raleway;
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 20.83px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: center;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet1_ .h4{
+	font-family: Raleway;
+	font-size: 22px;
+	font-weight: 700;
+	margin-top:50px;
+	line-height: 25.18px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet1_ .h5{
+	font-family: Raleway;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 25.83px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet1_ .h3{
+	font-family: Raleway;
+	font-size: 30px;
+	font-weight: 800;
+	line-height: 37.57px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#BB65EA;
+}
+
+.modal-bottom-sheet1_ .h4_{
+	margin-top:35px;
+	font-family: Roboto Flex;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.13px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+.modal-bottom-sheet1_ .p_{
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16.44px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+.modal-bottom-sheet1_ .form_h5{
+	font-family: Roboto Flex;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: left;
+	color:#ffffff;	
+}
+
 .custom-input::-webkit-calendar-picker-indicator {
 	position:absolute;
 	right:30px;
@@ -2021,4 +2148,94 @@ border-radius:10px;
 .BlogDetails_1 .mimg{
 	min-height:270px;
 	margin-top:97px;
+}
+
+.slider_7_card_7{
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.slider_7_card_7 img{
+	width:100%;
+	padding:5px;
+	border-radius:15px;
+}
+
+.slider_7_card_7 h3{
+	font-family: Roboto Flex;
+	font-size: 40px;
+	font-weight: 600;
+	line-height: 46.88px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: center;
+	color:#ffffff;	
+}
+
+.slider_7_card_7 h5{
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 23.48px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+.slider_7_card_7 p{
+	font-family: Roboto Flex;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+	letter-spacing: 0.015em;
+	text-align: left;
+	color:#ffffff;
+}
+
+.slider_7_card_7 a{
+	border: 1px solid #AA81FB;
+	background:transparent;
+	font-family: Roboto Flex;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 14.06px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff!important;
+	border-radius:10px;
+	padding: 5px 10px;
+	margin-bottom:20px!important;
+}
+
+.forminlinecard{
+	
+}
+
+.forminlinecard h5{
+margin-top:20px;
+font-family: Roboto Flex;
+font-size: 20px;
+font-weight: 600;
+line-height: 24px;
+letter-spacing: 0.10000000149011612px;
+text-align: center;
+color:#4E4B66;	
+}
+
+.forminlinecard p{
+	font-family: Roboto Flex;
+	font-size: 13px;
+	font-weight: 300;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: center;
+	color:#4E4B66;
+	margin-bottom:-5px;
+}
+
+.forminlinecard img{
+	width:25%;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:20px;
+	margin-top:20px;
 }

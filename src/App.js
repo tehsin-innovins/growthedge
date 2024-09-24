@@ -29,6 +29,7 @@ function AppContent() {
 
   useEffect(() => {
     // Show preloader on route change
+	console.log(location);
     setLoading(true);
     const timer = setTimeout(() => {
       setLoading(false);
