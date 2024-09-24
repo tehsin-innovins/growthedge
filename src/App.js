@@ -14,14 +14,14 @@ import NoPage from "./pages/NoPage";
 
 function App() {
 	return (
-		<BrowserRouter basename={process.env.PUBLIC_URL}>
+		<BrowserRouter>
 		<Routes>
 			<Route path="/" element={<Layout />}>
 			<Route index element={<Home />} />
 			<Route path="projects" element={<UseCase />} />
 			<Route path="services" element={<Services />} />
-			<Route path="blog/:slug" element={<BlogDetails />} />
-			<Route path="usecase/:slug" element={<BlogDetails />} />			
+			<Route path="blog" element={<BlogDetails />} />
+			<Route path="usecase" element={<BlogDetails />} />			
 			<Route path="about-us" element={<AboutUs />} />
 			<Route path="contact-us" element={<ContactUs />} />
 			<Route path="*" element={<NoPage />} />
