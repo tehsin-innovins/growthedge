@@ -4,14 +4,59 @@ import social1 from '../assets/home/social1.svg'; // Import the SVG file
 import social2 from '../assets/home/social2.svg'; // Import the SVG file
 import social3 from '../assets/home/social3.svg'; // Import the SVG file
 import social4 from '../assets/home/social4.svg'; // Import the SVG file
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark,faMagnifyingGlass,faChevronLeft,faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../App.css';
 
 function Footer(){
+  const location = useLocation();
+  const isHomePage = location.pathname === '/' || location.pathname === '/home';
+  
+  // Conditional class name
+  const className = isHomePage ? 'highlighted' : 'highlighted_';
+  
+    const [isVisible, setIsVisible] = useState(false); // State to track visibility
+
+  const handleScroll = () => {
+    // Show button when scrolled down 300px
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Smooth scrolling effect
+    });
+  };
+
+  useEffect(() => {
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      // Cleanup the event listener
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
     <>
 		<section className="dasktop-footer">
+		<a  
+		onClick={scrollToTop}
+      className={`btn go-to-top ${isVisible ? 'visible' : ''}`} // Conditional class for visibility
+      style={{ display: isVisible ? 'block' : 'none' }} // Show/hide based on state
+		>
+		&#8679;
+		</a>
 			<div className="container">
 				<div className="row">
+					<div className="col-md-1 col-lg-1 col-12"></div>
 					<div className="col-md-4 col-lg-4 col-12">
 						<div className="links1">
 						<img src={logo} alt="Logo" width={130} height={60} />
@@ -27,15 +72,15 @@ function Footer(){
 					</div>
 					<div className="col-md-3 col-lg-3 col-12">
 						<div className="links2">
-							<Link className="d-flex">Home</Link>
-							<Link className="d-flex">Services</Link>
-							<Link className="d-flex">Case Studies & Blogs</Link>
-							<Link className="d-flex">About us</Link>
-							<Link className="d-flex">Contact Us</Link>
-							<Link className="d-flex">Free E Book</Link>
+							<Link to="/" className="d-flex">Home</Link>
+							<Link to="/services" className="d-flex">Services</Link>
+							<Link to="/projects" className="d-flex">Case Studies & Blogs</Link>
+							<Link to="/about-us" className="d-flex">About us</Link>
+							<Link to="/" className="d-flex">Contact Us</Link>
+							<Link to="/" className="d-flex">Free E Book</Link>
 						</div>
 					</div>
-					<div className="col-md-5 col-lg-5 col-12 pt-4 pb-4">
+					<div className="col-md-4 col-lg-4 col-12 pt-4 pb-4">
 							<h5 className="text-center mt-4"><span>[</span> Contact Us <span>]</span></h5>
 							<p className="text-center text-white">Subscribe and be the first one to know our new updates</p>
 							<form action="">
@@ -56,7 +101,7 @@ function Footer(){
 					</div>					
 				</div>
 			</div>
-			<div className="highlighted">
+			<div className={className}>
 				<div className="imgbox">
 				<h5>its time for a</h5>
 				<h4>level up!</h4>

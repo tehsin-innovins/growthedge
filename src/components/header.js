@@ -16,16 +16,16 @@ function Header(){
 				<div className="col-md-10 col-12">
 					<ul>
 						<li>
-							<Link>Home</Link>
+							<Link to="/">Home</Link>
 						</li>
 						<li>
-							<Link>Services</Link>
+							<Link to="/services">Services</Link>
 						</li>
 						<li>
-							<Link>Case Studies / Blogs</Link>
+							<Link to="/projects">Case Studies / Blogs</Link>
 						</li>						
 						<li>
-							<Link>About Us</Link>
+							<Link to="/about-us">About Us</Link>
 						</li>
 						<li>
 							<Link>Contact Us</Link>

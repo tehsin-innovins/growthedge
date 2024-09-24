@@ -336,27 +336,27 @@ function Home() {
 						</div>
 						
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title">Discover <img src={process1} width={20} height={20} /></h5>
-							<p className="cp">Expertise in data analytics, UI/UX design, and tech development. Through</p>
-							<div className="circle"></div>
+							<h5 className="child_title_">Discover <img src={process1} width={20} height={20} /></h5>
+							<p className="cp_">Expertise in data analytics, UI/UX design, and tech development. Through</p>
+							<div className="circle_"></div>
 						</div>
 
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title">Define <img src={process2} width={20} height={20} /></h5>
-							<p className="cp">Expertise in data analytics, UI/UX design, and tech Expertise in data analytics,</p>
-							<div className="circle"></div>							
+							<h5 className="child_title_">Define <img src={process2} width={20} height={20} /></h5>
+							<p className="cp_">Expertise in data analytics, UI/UX design, and tech Expertise in data analytics,</p>
+							<div className="circle_"></div>							
 						</div>
 						
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title">Dream <img src={process3} width={20} height={20} /></h5>
-							<p className="cp">Expertise in data analytics Expertise in data analytics,Expertise in data analytics,</p>
-							<div className="circle"></div>						
+							<h5 className="child_title_">Dream <img src={process3} width={20} height={20} /></h5>
+							<p className="cp_">Expertise in data analytics Expertise in data analytics,Expertise in data analytics,</p>
+							<div className="circle_"></div>						
 						</div>
 
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title">Dream <img src={process4} width={20} height={20} /></h5>
-							<p className="cp">Expertise in data analytics, UI/UX design, and tech development. Through</p>
-							<div className="circle"></div>						
+							<h5 className="child_title_">Dream <img src={process4} width={20} height={20} /></h5>
+							<p className="cp_">Expertise in data analytics, UI/UX design, and tech development. Through</p>
+							<div className="circle_"></div>						
 						</div>						
 						
 					</div>
@@ -376,7 +376,7 @@ function Home() {
 			<h4 className="homepage_4_title_1">We Excel in</h4>
 			<p className="homepage_4_sub_title_1">Conversion Driven approaches</p>
 		
-			<div className="rightbox">
+			<div className="rightbox align-items-center">
 				<a className="mt-0 text-white" onClick={handleShow_two}>View All Services</a> <img src={keyboard_double_arrow_right} width={20} height={20} />
 			</div>
 			
@@ -554,7 +554,7 @@ function Home() {
 				
 					<div className="row">
 						
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card3 p-2">
 								<img src={sun} width={50} height={50} />
@@ -563,17 +563,17 @@ function Home() {
 							
 						</div>
 						
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card4 p-2">
 								<img src={sunrise} width={50} height={50} />
-								<h4>SCALEABILITY</h4>
+								<h4 className="h4_title">SCALEABILITY</h4>
 								<p>Our mission is to harness the power of data analytic</p>
 							</div>
 							
 						</div>
 
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card5 p-2">
 								<img src={user} width={50} height={50} />
@@ -583,7 +583,7 @@ function Home() {
 							
 						</div>
 						
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card6 p-2">
 								<img src={zap} width={50} height={50} />
@@ -597,7 +597,7 @@ function Home() {
 				
 				</div>
 				
-				<div className="col-lg-3 col-md-3">
+				<div className="col-12 col-lg-3 col-md-3">
 				
 					<div className="row">
 						
@@ -611,7 +611,7 @@ function Home() {
 							
 						</div>
 						
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card5 p-2">
 								<img src={user} width={50} height={50} />
@@ -621,7 +621,7 @@ function Home() {
 							
 						</div>
 						
-						<div className="col-lg-6 col-md-6 con">
+						<div className="col-12 col-lg-6 col-md-6 con">
 							
 							<div className="sb_card6 p-2">
 								<img src={zap} width={50} height={50} />
@@ -746,8 +746,6 @@ function Home() {
 		</div>
 	</section>
 
-// Schedule Bottom Sheet
-
       <div
         className={`modal fade ${showBottomsheet_one ? 'show' : ''}`}
         tabIndex="-1"
@@ -808,8 +806,6 @@ function Home() {
           </div>
         </div>
       </div>
-
-//Service Bottom Sheet
 
       <div
         className={`modal fade ${showBottomsheet_two ? 'show' : ''}`}
