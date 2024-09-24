@@ -740,10 +740,31 @@ function Home() {
 	
 	<section className="goal_section">
 		<div className="imgbox">
+		<div className="img-item1">
+			<p><span>Entrepreneur</span></p>
+			<p>Keen Enthusiasts for MAX Outputs</p>
+		</div>
+		
+		<div className="img-item2">
+			<p><span>Marketers</span></p>
+			<p>Keen Enthusiasts for MAX Outputs</p>
+		</div>
+		
+		<div className="img-item3">
+			<p><span>Engineers</span></p>
+			<p>Keen Enthusiasts for MAX Outputs</p>
+		</div>
+		
+		<div className="img-item4">
+			<p><span>Marketers</span></p>
+			<p>Keen Enthusiasts for MAX Outputs</p>
+		</div>
+		
 		<img src={goal} alt="goal" width={180}/>
+		</div>
 		<h4>ONE GOAL</h4>
 		<h5>CONVERSION</h5>
-		</div>
+
 	</section>
 
       <div

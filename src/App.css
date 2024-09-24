@@ -91,11 +91,11 @@ body{
 }
 
 .dasktop-footer .links1{
-	margin-top:50%;
+	margin-top:30%;
 }
 
 .dasktop-footer .links2{
-	margin-top:70%;
+	margin-top:40%;
 }
 
 .dasktop-footer .social-icon a {
@@ -119,11 +119,11 @@ body{
 
 .dasktop-footer a{
 	text-decoration:none;
-	margin-top:10px;
-	margin-bottom:10px;
+	margin-top:20px;
+	margin-bottom:20px;
 	color:#ffffff;
 	font-family: Lato;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 500;
 	line-height: 20px;
 	letter-spacing: 0.10000000149011612px;
@@ -133,7 +133,7 @@ body{
 .dasktop-footer h5{
 	color:#ffffff;
 	font-family: Raleway;
-	font-size: 20px;
+	font-size: 22px;
 	font-weight: 700;
 	line-height: 24px;
 	letter-spacing: 0.15000000596046448px;
@@ -147,7 +147,7 @@ body{
 /* Example for specific input and textarea classes */
 .custom-input::placeholder,
 .custom-textarea::placeholder {
-  font-size: 16px; /* Change to desired font size */
+  font-size: 14px; /* Change to desired font size */
   color: #888; /* Change to desired placeholder text color */
 }
 
@@ -155,7 +155,7 @@ body{
   padding: 12px; /* Adjust padding as needed */
   box-sizing: border-box; /* Ensure padding is included in total width and height */
   /* For vertical centering */
-  height: 48px; /* Set a height to control vertical centering */
+  height: 38px; /* Set a height to control vertical centering */
   display: flex; /* Use flexbox to help with alignment */
   align-items: center; /* Vertically center text */
 }
@@ -227,6 +227,13 @@ body{
 
 
 /* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1280px){
+  .swiper1 {
+    max-width: 93.50vw; /* Adjust width or any other style here */
+  }
+}
+
+/* Target screen sizes between 1399px and 1400px */
 @media (min-width: 1366px){
   .swiper1 {
     max-width: 90.20vw; /* Adjust width or any other style here */
@@ -242,20 +249,27 @@ body{
 
 .custom-navigation{
 	display:Flex;
-	width:100px;
+	width:120px;
 	position:absolute;
 	top:4%;
 	align-items:center!important;
-	right:8%;
+	right:5%;
 }
 
 .custom-navigation1{
 	display:Flex;
-	width:100px;
+	width:120px;
 	position:absolute;
 	top:4%;
 	align-items:center!important;
-	right:20%;
+	right:21%;
+}
+
+.custom-pagination {
+    display: flex;
+	margin-left:5px;
+	margin-right:5px;
+    align-items: center;
 }
 .swiper-pagination-bullet{
 	margin-left:2px;

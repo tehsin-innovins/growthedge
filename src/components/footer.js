@@ -154,7 +154,7 @@ function Footer(){
 								<input type="text" className="custom-input form-control" id="email" placeholder="Your Email Address" name="email"/>
 							</div>
 							<div class="mb-3 mt-3">
-								<textarea className="custom-textarea form-control" rows="5" id="msg" name="msg" placeholder="Put your thoughts Here!"></textarea>
+								<textarea className="custom-textarea form-control" rows="3" id="msg" name="msg" placeholder="Put your thoughts Here!"></textarea>
 							</div>  
 							<button type="submit" className="btn mb-4">CONNECT NOW</button>
 							</form>							
