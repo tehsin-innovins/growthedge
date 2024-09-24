@@ -557,57 +557,52 @@
 	background: linear-gradient(180deg, #BB65ED 0%, #492779 100%);
 	border-radius: 0px 100px 0px 0px;
 	padding-bottom: 10px;
+	padding-top: 20px; /* Added padding to prevent overlap at the top */
 	position: relative;
-	min-height: 100vh; /* Ensures full height */
+	min-height: 100vh; /* Ensures full viewport height */
+	display: flex;
+	flex-direction: column; /* Ensures the content stacks vertically */
+	justify-content: center; /* Centers the content vertically */
 }
 
 .goal_section img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0; /* Added for centering */
-	margin: 0 auto; /* Center horizontally */
-	width: 70%;
-	height: auto; /* Ensures responsive image */
+	position: relative; /* Changed to relative to avoid overlap */
+	max-width: 100%; /* Responsive image sizing */
+	height: auto;
+	margin: 0 auto; /* Center image horizontally */
 }
 
 .goal_section .imgbox {
-	margin: 0 auto; /* Center the image box */
+	margin: 20px auto; /* Center the image box with some margin */
 	width: 250px;
-	height:auto;
 	position: relative;
 	text-align: center;
 	color: #ffffff;
+	z-index: 1; /* Ensure it stays above the background */
+}
+
+.goal_section h4, .goal_section h5 {
+	position: relative;
+	z-index: 2; /* Prevent overlap from background or other elements */
+	text-align: center;
 }
 
 .goal_section h4 {
-	position:absolute;
-	bottom:10.5%;
-	left:0;
-	right:0;
 	margin-bottom: 0;
 	font-family: 'Raleway', sans-serif;
-	font-size: 30.77px;
+	font-size: 27.77px;
 	font-weight: 800;
-	line-height: 1.2; /* Adjusted line height for better readability */
+	line-height: 1.2;
 	letter-spacing: 0.26px;
-	text-align: center;
-	color:#ffffff;
 }
 
 .goal_section h5 {
-	position:absolute;
-	bottom:5.5%;
-	left:0;
-	right:0;
-	margin-top: -30px; /* Adjusted spacing for better alignment */
+	margin-top: -30px; /* Adjusted margin to improve spacing */
 	font-family: 'Raleway', sans-serif;
-	font-size: 23.5px;
+	font-size: 21px;
 	font-weight: 800;
-	line-height: 1.2; /* Adjusted line height */
+	line-height: 1.2;
 	letter-spacing: 0.26px;
-	text-align: center;
-	color:#ffffff;
 }
 
 .goal_section .img-item1 {
