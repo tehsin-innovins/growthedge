@@ -11,6 +11,23 @@
 body{
 	background-color:#111012;
 }
+
+.preloader{
+	width:100%!important;
+	height:100vh!important;
+	position:relative!important;
+	z-index:999!important;
+	background-color:#111012!important;
+}
+
+.preloader img{
+	width:100px;
+	position:fixed;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+}
+
 .dasktop-menu{
 	padding:5px;
 	box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Inset shadow only at bottom */

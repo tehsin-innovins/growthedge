@@ -206,7 +206,7 @@ function Home() {
 			<div className="row">
 				
 				<div className="col-md-6 col-lg-6 col-12">
-					<img src={hero_circle} alt="hero_circle" className="sideimg"/>
+					<img src={hero_circle} alt="hero_circle" className="sideimg "/>
 				</div>
 	
 				<div className="col-md-6 col-lg-6 col-12">
