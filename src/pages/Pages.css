@@ -556,10 +556,9 @@
 .goal_section {
 	background: linear-gradient(180deg, #BB65ED 0%, #492779 100%);
 	border-radius: 0px 100px 0px 0px;
-	padding-bottom: 10px;
-	padding-top: 20px; /* Added padding to prevent overlap at the top */
+	padding-bottom: 20px;
+	padding-top: 0px; /* Added padding to prevent overlap at the top */
 	position: relative;
-	min-height: 100vh; /* Ensures full viewport height */
 	display: flex;
 	flex-direction: column; /* Ensures the content stacks vertically */
 	justify-content: center; /* Centers the content vertically */
@@ -569,7 +568,7 @@
 	position: relative; /* Changed to relative to avoid overlap */
 	max-width: 100%; /* Responsive image sizing */
 	height: auto;
-	margin: 0 auto; /* Center image horizontally */
+	margin: -20px auto; /* Center image horizontally */
 }
 
 .goal_section .imgbox {
@@ -588,27 +587,30 @@
 }
 
 .goal_section h4 {
+	margin-top:10px;
 	margin-bottom: 0;
 	font-family: 'Raleway', sans-serif;
-	font-size: 27.77px;
+	font-size: 27px;
 	font-weight: 800;
 	line-height: 1.2;
-	letter-spacing: 0.26px;
+	letter-spacing: 0.26px;	
+	color:#ffffff;
 }
 
 .goal_section h5 {
-	margin-top: -30px; /* Adjusted margin to improve spacing */
+	margin-top:0px; /* Adjusted margin to improve spacing */
 	font-family: 'Raleway', sans-serif;
 	font-size: 21px;
 	font-weight: 800;
 	line-height: 1.2;
 	letter-spacing: 0.26px;
+	color:#ffffff;
 }
 
 .goal_section .img-item1 {
 	position: absolute;
 	right: -32%; /* Adjusted to avoid overflow */
-	top: 51px;
+	top: 33px;
 	text-align: left!important;
 }
 
@@ -636,7 +638,7 @@ margin:0;
 .goal_section .img-item2 {
 	position: absolute;
 	left: -32%; /* Adjusted to avoid overflow */
-	top: 120px;
+	top: 105px;
 	text-align: right!important;
 }
 
@@ -664,7 +666,7 @@ margin:0;
 .goal_section .img-item3 {
 	position: absolute;
 	right: -32%; /* Adjusted to avoid overflow */
-	top: 193px;
+	top: 178px;
 	text-align: left!important;
 }
 
@@ -693,7 +695,7 @@ margin:0;
 .goal_section .img-item4 {
 	position: absolute;
 	left: -32%; /* Adjusted to avoid overflow */
-	top: 260px;
+	top: 250px;
 	text-align: right!important;
 }
 
