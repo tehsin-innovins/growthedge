@@ -1,12 +1,16 @@
 {
   "files": {
-    "main.css": "/growthedge/static/css/main.9387965e.css",
-    "main.js": "/growthedge/static/js/main.c6beecb8.js",
+    "main.css": "/growthedge/static/css/main.96658022.css",
+    "main.js": "/growthedge/static/js/main.16a5c33e.js",
     "static/js/453.e63cd7e3.chunk.js": "/growthedge/static/js/453.e63cd7e3.chunk.js",
     "static/media/analytics.png": "/growthedge/static/media/analytics.e84a7d7f9dc2aa081117.png",
     "static/media/use_case.png": "/growthedge/static/media/use_case.84feb3d6e3f3af44f0ae.png",
+    "static/media/bl2.png": "/growthedge/static/media/bl2.7be0b451331f1b2dc991.png",
+    "static/media/bl1.png": "/growthedge/static/media/bl1.2facf7a7cabee40d1dae.png",
+    "static/media/bl4.png": "/growthedge/static/media/bl4.64eb69c4db0467f344e6.png",
     "static/media/aprove.png": "/growthedge/static/media/aprove.673d4e36496455a6a389.png",
     "static/media/work5.png": "/growthedge/static/media/work5.daf1bf6f669573c35f72.png",
+    "static/media/bl3.png": "/growthedge/static/media/bl3.9696411a9b3308966af7.png",
     "static/media/work3.png": "/growthedge/static/media/work3.92a71b25b5bc78a2269c.png",
     "static/media/hero-circle.png": "/growthedge/static/media/hero-circle.3bf74113be09c2937a9d.png",
     "static/media/work4.png": "/growthedge/static/media/work4.459a245d56e8ef974f96.png",
@@ -75,12 +79,12 @@
     "static/media/zap.svg": "/growthedge/static/media/zap.3c8cd2d78618e051e6b69196cb11334c.svg",
     "static/media/trending_dark.svg": "/growthedge/static/media/trending_dark.cb342444b352908fd85b328d87a4894e.svg",
     "static/media/trending.svg": "/growthedge/static/media/trending.c14016c700ce02a60a732e853af0496f.svg",
-    "main.9387965e.css.map": "/growthedge/static/css/main.9387965e.css.map",
-    "main.c6beecb8.js.map": "/growthedge/static/js/main.c6beecb8.js.map",
+    "main.96658022.css.map": "/growthedge/static/css/main.96658022.css.map",
+    "main.16a5c33e.js.map": "/growthedge/static/js/main.16a5c33e.js.map",
     "453.e63cd7e3.chunk.js.map": "/growthedge/static/js/453.e63cd7e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9387965e.css",
-    "static/js/main.c6beecb8.js"
+    "static/css/main.96658022.css",
+    "static/js/main.16a5c33e.js"
   ]
 }
