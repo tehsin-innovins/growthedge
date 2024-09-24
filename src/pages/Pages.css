@@ -558,7 +558,7 @@
 	border-radius: 0px 100px 0px 0px;
 	padding-bottom: 10px;
 	position: relative;
-	min-height: 90vh; /* Ensures full height */
+	min-height: 100vh; /* Ensures full height */
 }
 
 .goal_section img {
