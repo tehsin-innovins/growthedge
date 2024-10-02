@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark,faPlus, faMinus,faChevronLeft,faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -53,7 +53,7 @@ import circlelb from '../assets/home/circlelb.png'; // Import the PNG file
 import circlerb from '../assets/home/circlerb.png'; // Import the PNG file
 import sun from '../assets/home/sun.svg'; // Import the PNG file
 import user from '../assets/home/user.svg'; // Import the PNG file
-import about from '../assets/about/about.png'; // Import the PNG file
+import abouti from '../assets/about/about.png'; // Import the PNG file
 import aprove from '../assets/about/aprove.png'; // Import the PNG file
 import team1 from '../assets/about/team1.png'; // Import the PNG file
 import team2 from '../assets/about/team2.png'; // Import the PNG file
@@ -64,7 +64,29 @@ import './Pages.css';
 import CustomSwiper from '../components/CustomSwiper';
 
 function AboutUs() {
-	
+  const [about,setAbout] = useState([]);
+  const [SERdata,setSERdata] = useState([]);
+  const [Udata,setUdata] = useState([]);
+  const [Teams,setTeams] = useState([]);  
+  const [lifedata,setLifedata] = useState([]);
+  const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
+  
+  useEffect(() => {
+    // Fetch data from API
+    fetch('https://shareittofriends.com/demo/growthedge/aboutus.php')  // Replace with your actual API URL
+      .then((response) => response.json())  // Parse JSON
+      .then((data) => {
+        setAbout(data.aboutdata);  // Store the fetched data
+		setSERdata(data.serdata);
+		setUdata(data.usecase);
+		setTeams(data.teams);	
+		setLifedata(data.lifedata);	
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);  // Empty array means this runs once when the component mounts
+  
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleToggle = (index) => {
@@ -85,15 +107,6 @@ function AboutUs() {
 		{ img: excel3, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },	
 		{ img: excel1, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },
 	];	
-	
-	const slidesData4 = [
-		{ title: 'Did you know?', content: 'Personalized Recommendations<small>could help to</small> [ Spike ] your conversion by 20% <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-	];	
 
   	const slidesData5 = [
 		{ img: process1, title: 'Deep Dive', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
@@ -103,12 +116,6 @@ function AboutUs() {
 		{ img: process1, title: 'Deploy', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
 		{ img: process3, title: 'Dream', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },
 	];	
-  
-  const accordionItems = [
-    { title: 'Accordion Item 1', content: '<b>How will it help us determine the pointers</b><br/><b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },
-    { title: 'Accordion Item 2', content: '<b>How will it help us determine the pointers</b><br/><b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },
-    { title: 'Accordion Item 3', content: '<b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.<b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },	
-  ];
   
   const slidesData6 = [
 		{ img: team1,position: 'Data Scientist',department:'Data Sci', title: 'mudit gupta', content: 'Our Vision is to harness the power of data analytics, elevate user experiences through intuitive UI/UX design, and drive technological advancements to enable our clients to enable' },	
@@ -126,29 +133,29 @@ function AboutUs() {
 		src={index % 2 === 0 ? excel_bg1 : excel_bg2} // Alternates between excel_bg1 and excel_bg2
 		alt="Background"
 		/>
-		<img className="bgi2" src={slide.img}/>
+		<img className="bgi2" src={`https://shareittofriends.com/demo/growthedge/uploads/services/${slide.slider_img}`}/>
 		<div className="contentbox">
-			<p className="title">{slide.title}</p>
-			<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
+			<p className="title">{slide.service_name}</p>
+			<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_desc }}></p>
 		</div>
-		<div className="imgbox">
+		<a href={`services/${slide.slug}`} className="imgbox">
 			<img className="btn_img" src={circle_btn}/>
 			<img className="arrow_right_btn" src={arrow_right}/>
+		</a>
 		</div>
-		</div>
-	);
+	);	
 	
 	const renderCustomSlide_three = (slide, index) => (
 		<div className={`slider_3_card_3 card card-body ${index % 2 === 0 ? 'cardbg3' : ''}`}>
 			<div className="d-flex justify-content-between">
-			<p className="ct">{slide.title}</p>
+			<p className="ct">{slide.slider_small_title}</p>
 			{/* Conditionally rendering image source */}
 			<img src={index % 2 === 0 ? trending : trending_dark} width={15} height={15} alt="Trending Icon" />
 			</div>
-			<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
-			<a href="#">Read case Studies</a>
+			<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_title }}></p>
+			<a href={`usecase/${slide.slug}`} >Read case Studies</a>
 		</div>
-	);  
+	);
 	
 	const renderCustomSlide_five = (slide, index) => (
 		<>
@@ -161,10 +168,10 @@ function AboutUs() {
 	const renderCustomSlide_team = (slide, index) => (
 		<div className="slider_6_card_6">
 			<div className="contentbox align-items-center justify-content-between d-flex">
-				{slide.title}
+				{slide.name}
 				<a>{slide.position}</a>
 			</div>
-			<img src={slide.img}/>
+			<img src={`${folderPath}teams/${slide.pic}`}/>
 			<p><span>{slide.department}</span></p>
 			<p>{slide.content}</p>
 		</div>
@@ -180,16 +187,16 @@ function AboutUs() {
 				
 				<div className="col-12 col-lg-6 col-md-6">
 					
-					<h4>Where we Come from<img src={trending} width={50} height={50} /></h4>
-					<h5>The financial capital of India</h5>
-					<h3>[ MUMBAI ]</h3>
-					<p>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jeweler, a testament to trust, proudly offered by Kalyan Jewelers. Indulge in the assurance of authenticity with our collection of BIS a testament to trust, proudly offered. </p>
+					<h4>{about.section_1_title} <img src={`${folderPath}aboutus_page/${about.section_1_title_img}`} width={50} height={50} /></h4>
+					<h5>{about.section_1_subtitle}</h5>
+					<h3>{about.section_1_childtitle}</h3>
+					<p>{about.section_1_content}</p>
 					<a href="/" className="btn shadow-sm">Subscribe for service</a>
 					
 				</div>
 				
 				<div className="col-12 col-lg-6 col-md-6">
-					<img src={about}/>
+					<img src={`${folderPath}aboutus_page/${about.section_1_sideimg}`}/>
 				</div>				
 				
 			</div>
@@ -203,26 +210,26 @@ function AboutUs() {
 		<div className="container">
 			<div className="row">
 				<div className="col-12 col-lg-6 col-md-6">
-					<h4>Who we are</h4>
-					<h5>Pioneers in D2C Platforms</h5>
+					<h4>{about.section_2_title}</h4>
+					<h5>{about.section_2_subtitle}</h5>
 					<div className="card p-2">
-						<img src={aprove}/>
-						<h5>Figures will help you figure out!</h5>
-						<p>was said by a Wise man Once -</p>
+						<img src={`${folderPath}aboutus_page/${about.section_2_card_img}`}/>
+						<h5>{about.section_2_card_title}</h5>
+						<p>{about.section_2_card_content}</p>
 					</div>
 				</div>
 				<div className="col-12 col-lg-6 col-md-6 mt-2">
 					<br/>
 					<br/>
-					<p className="abpt"><span>Entrepreneur</span></p>
-					<p className="abpb">Keen Enthusiasts for MAX Outputs</p>
-					<p>We bring an experience from working in an agile framework dynamic yet experienced professionals moving out of traditional work flow to grow and make people grow off the Grid.</p>
-					<p className="abpt"><span>Engineers</span></p>
-					<p className="abpb">Keen Enthusiasts for MAX Outputs</p>
-					<p>We bring an experience from working in an agile framework dynamic yet experienced professionals moving out of traditional work flow to grow and make people grow off the Grid.</p>
-					<p className="abpt"><span>Marketers</span></p>
-					<p className="abpb">Keen Enthusiasts for MAX Outputs</p>
-					<p>We bring an experience from working in an agile framework dynamic yet experienced professionals moving out of traditional work flow to grow and make people grow off the Grid.</p>
+					<p className="abpt"><span>{about.section_2_m_title1}</span></p>
+					<p className="abpb">{about.section_2_m_subtitle1}</p>
+					<p>{about.section_2_m_content1}</p>
+					<p className="abpt"><span>{about.section_2_m_title2}</span></p>
+					<p className="abpb">{about.section_2_m_subtitle2}</p>
+					<p>{about.section_2_m_content2}</p>
+					<p className="abpt"><span>{about.section_2_m_title3}</span></p>
+					<p className="abpb">{about.section_2_m_subtitle3}</p>
+					<p>{about.section_2_m_content3}</p>
 
 				</div>
 				
@@ -239,13 +246,13 @@ function AboutUs() {
 			<p className="homepage_4_sub_title_1">Based on Real incidents</p>
 		
 			<div className="rightbox">
-				<a className="mt-0 text-white">View All Use Cases</a> <img src={keyboard_double_arrow_right} width={20} height={20} />
+				<a href="projects" className="mt-0 text-white">View All Use Cases</a> <img src={keyboard_double_arrow_right} width={20} height={20} />
 			</div>
 			
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData4}
+		slides={Udata}
 		spaceBetween={10}
 		slidesPerView={6}
 		renderSlide={renderCustomSlide_three}
@@ -267,7 +274,7 @@ function AboutUs() {
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData6}
+		slides={Teams}
 		spaceBetween={20}
 		slidesPerView={3}
 		renderSlide={renderCustomSlide_team}
@@ -285,72 +292,24 @@ function AboutUs() {
 			<h4>Life<span>@ D2c</span></h4>
 			
 			<div className="row">
-
+				{lifedata.map((slide, index) => (
 				<div className="col-lg-3 col-md-3 col-12 p-2">
 					<div className="row align-items-center p-0">
 						<div className="col-6 col-lg-1 col-md-1">
-							<h3>1</h3>
+							<h3>{slide.title}</h3>
 						</div>
 						<div className="col-6 col-lg-3 col-md-3">
-							<img src={life} />
+							<img src={`${folderPath}common-sliders/${slide.img}`} />
 						</div>
 						<div className="col-12 col-lg-8 col-md-8 p-0">
-							<h5>Enthusiams & Cheerful is how we could define</h5>
+							<h5>{slide.subtitle}</h5>
 						</div>						
 						<div className="col-12 col-lg-12 col-md-12">
-							<p>lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech.</p>
+							<p>{slide.content}</p>
 						</div>
 					</div>
 				</div>
-
-				<div className="col-lg-3 col-md-3 col-12 p-2">
-					<div className="row align-items-center p-0">
-						<div className="col-6 col-lg-1 col-md-1">
-							<h3>1</h3>
-						</div>
-						<div className="col-6 col-lg-3 col-md-3">
-							<img src={life} />
-						</div>
-						<div className="col-12 col-lg-8 col-md-8 p-0">
-							<h5>Enthusiams & Cheerful is how we could define</h5>
-						</div>						
-						<div className="col-12 col-lg-12 col-md-12">
-							<p>lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech.</p>
-						</div>
-					</div>
-				</div>
-				<div className="col-lg-3 col-md-3 col-12 p-2">
-					<div className="row align-items-center p-0">
-						<div className="col-6 col-lg-1 col-md-1">
-							<h3>1</h3>
-						</div>
-						<div className="col-6 col-lg-3 col-md-3">
-							<img src={life} />
-						</div>
-						<div className="col-12 col-lg-8 col-md-8 p-0">
-							<h5>Enthusiams & Cheerful is how we could define</h5>
-						</div>						
-						<div className="col-12 col-lg-12 col-md-12">
-							<p>lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech.</p>
-						</div>
-					</div>
-				</div>
-				<div className="col-lg-3 col-md-3 col-12 p-2">
-					<div className="row align-items-center p-0">
-						<div className="col-6 col-lg-1 col-md-1">
-							<h3>1</h3>
-						</div>
-						<div className="col-6 col-lg-3 col-md-3">
-							<img src={life} />
-						</div>
-						<div className="col-12 col-lg-8 col-md-8 p-0">
-							<h5>Enthusiams & Cheerful is how we could define</h5>
-						</div>						
-						<div className="col-12 col-lg-12 col-md-12">
-							<p>lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech.</p>
-						</div>
-					</div>
-				</div>
+				))}
 				
 			</div>
 			
@@ -364,47 +323,47 @@ function AboutUs() {
 		
 			<div className="col-lg-12 col-md-12 col-12 mt-4 mb-4">
 					
-					<h4 className="h4__">What Sets us <span>Apart</span></h4>
-					<h5 className="h5__">Cursotiy is what drives us</h5>
+					<h4 className="h4__" dangerouslySetInnerHTML={{ __html: about.section_5_title }} ></h4>
+					<h5 className="h5__">{about.section_5_subtitle}</h5>
 					
 					<div className="row row-cols-1 row-cols-md-5 g-4">
 						
 						<div className="col">
 							<div className="sb_card3 p-2">
-									<img src={sun} width={50} height={50} />
-									<h4>CURSOITY</h4>
+									<img src={`${folderPath}aboutus_page/${about.section_5_card1_img}`} width={50} height={50} />
+									<h4>{about.section_5_card1_title}</h4>
 							</div>							
 						</div>	
 
 						<div className="col">
 							<div className="sb_card4_ p-2">
-								<img src={sunrise} width={50} height={50} />
-								<h4 className="h4_">user centric</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}aboutus_page/${about.section_5_card2_img}`} width={50} height={50} />
+								<h4 className="h4_">{about.section_5_card2_title}</h4>
+								<p>{about.section_5_card2_content}</p>
 							</div>					
 						</div>	
 						
 						<div className="col">
 							<div className="sb_card6__ p-2">
-									<img src={zap} width={50} height={50} />
-									<h4 className="">SCALEABILITY</h4>
-									<p>Our mission is to harness the power of data analytic</p>
+									<img src={`${folderPath}aboutus_page/${about.section_5_card3_img}`} width={50} height={50} />
+									<h4 className="">{about.section_5_card3_title}</h4>
+									<p>{about.section_5_card3_content}</p>
 							</div>		
 						</div>							
 
 						<div className="col">
 							<div className="sb_card5___ p-2">
-								<img src={user} width={50} height={50} />
-								<h4>user centric</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}aboutus_page/${about.section_5_card4_img}`} width={50} height={50} />
+								<h4>{about.section_5_card4_title}</h4>
+								<p>{about.section_5_card4_content}</p>
 							</div>								
 						</div>	
 
 						<div className="col">
 							<div className="sb_card6___ p-2">
-								<img src={zap} width={50} height={50} />
-								<h4 className="h4_">user centric</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}aboutus_page/${about.section_5_card5_img}`} width={50} height={50} />
+								<h4 className="h4_">{about.section_5_card5_title}</h4>
+								<p>{about.section_5_card5_content}</p>
 							</div>					
 						</div>	
 						
@@ -430,7 +389,7 @@ function AboutUs() {
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData2}
+		slides={SERdata}
 		spaceBetween={15}
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
@@ -464,18 +423,19 @@ function AboutUs() {
 			
 				<div className="row pb-4">
 					
-					{slidesData2.map((slide, index) => (
+					{SERdata.map((slide, index) => (
 						<div className="col-12 col-lg-4 col-md-4 p-2">
 						<div className="slider_2_card_2_services">
-						<img
+						<a href={`services/${slide.slug}`}><img
 						className="bgi1"
 						src={index % 2 === 0 ? excel_bg1 : excel_bg2} // Alternates between excel_bg1 and excel_bg2
 						alt="Background"
 						/>
-						<img className="bgi2" src={slide.img}/>
+						<img className="bgi2" src={`${folderPath}services/${slide.slider_img}`}/>
+						</a>
 						<div className="contentbox">
-							<p className="title">{slide.title}</p>
-							<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
+							<p className="title">{slide.service_name}</p>
+							<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_desc }}></p>
 						</div>
 						</div>
 						</div>

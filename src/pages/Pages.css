@@ -962,6 +962,13 @@ color:#462576;
 	margin-top:72px!important;
 }
 
+/* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1600px){
+  .sb_card4 .h4_title{
+	margin-top:85px!important;
+  }
+}
+
 .sb_card4 p,
 .sb_card4_ p{
 	text-transform:capitalize;	
@@ -1683,6 +1690,20 @@ font-weight: 600;
 line-height: 16.78px;
 letter-spacing: 0.20000000298023224px;
 text-align: left;
+}
+
+/* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1400px){
+	.services_2 .abpt{
+		font-size:18px;
+		line-height: 28.18px;
+		margin-top:15px!important;
+		margin-bottom:10px!important;
+	}
+	.services_2 p{
+		margin-top:10px!important;
+		margin-bottom:10px!important;
+	}	
 }
 
 .services_4{

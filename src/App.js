@@ -8,6 +8,7 @@ import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import BlogDetails from "./pages/BlogDetails";
+import UsecaseDetails from "./pages/UsecaseDetails";
 import Services from "./pages/Services";
 import UseCase from "./pages/UseCase";
 import ContactUs from "./pages/ContactUs";
@@ -45,9 +46,9 @@ function AppContent() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="projects" element={<UseCase />} />
-          <Route path="services" element={<Services />} />
-          <Route path="blog" element={<BlogDetails />} />
-          <Route path="usecase" element={<BlogDetails />} />
+          <Route path="services/:tslug" element={<Services />} />
+          <Route path="blog/:slug" element={<BlogDetails />} />
+          <Route path="usecase/:slug" element={<UsecaseDetails />} />
           <Route path="about-us" element={<AboutUs />} />
           <Route path="contact-us" element={<ContactUs />} />
           <Route path="*" element={<NoPage />} />

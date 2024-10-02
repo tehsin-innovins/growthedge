@@ -247,6 +247,29 @@ body{
   }
 }
 
+/* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1600px){
+  .swiper1 {
+    max-width: 90vw; /* Adjust width or any other style here */
+  }
+  .custom-navigation1{
+	display:Flex;
+	width:120px;
+	position:absolute;
+	top:4%;
+	align-items:center!important;
+	right:17.50%!important;
+  }
+  .custom-navigation{
+	display:Flex;
+	width:120px;
+	position:absolute;
+	top:4%;
+	align-items:center!important;
+	right:6.50%!important;
+  }
+}
+
 .custom-navigation{
 	display:Flex;
 	width:120px;

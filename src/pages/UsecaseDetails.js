@@ -69,20 +69,20 @@ import CustomSwiper from '../components/CustomSwiper';
 import Pagination from '../components/Pagination';
 
 
-function BlogDetails() {
+function UsecaseDetails() {
 	
 	const { slug } = useParams();
-	const navigate = useNavigate(); // Hook to navigate programmatically
 	const [usdata,setUsdata] = useState([]);
 	const [ucbdata,setUcbdata] = useState([]);	
 	const [Udata,setUdata] = useState([]);  
 	const [Bdata,setBdata] = useState([]);  
+	const navigate = useNavigate(); // Hook to navigate programmatically
 	
 	const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
 	
 	useEffect(() => {
     // Fetch data from API with the slug parameter
-    fetch(`https://shareittofriends.com/demo/growthedge/blog-single.php?slug=${slug}`)  // API URL
+    fetch(`https://shareittofriends.com/demo/growthedge/usecase-single.php?slug=${slug}`)  // API URL
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok'); // Handle HTTP errors
@@ -345,9 +345,9 @@ function BlogDetails() {
 				</div>
 				<div className="col-md-7 col-lg-7 col-12">
 					<div className="contain mt-1">
-					<p className="title">{ucbdata.b_section_card_title}</p>
-					<p className="p">{ucbdata.b_section_card_content}</p>
-					<p className="sub_title">{ucbdata.b_section_card_subtitle}</p>
+					<p className="title">{ucbdata.uc_section_card_title}</p>
+					<p className="p">{ucbdata.uc_section_card_content}</p>
+					<p className="sub_title">{ucbdata.uc_section_card_subtitle}</p>
 					<a className="btn d-block">Subscribe to blogs <img src={send} width={15} height={15} /></a>
 					</div>
 				</div>
@@ -359,4 +359,4 @@ function BlogDetails() {
 	);
 };
 
-export default BlogDetails;
+export default UsecaseDetails;

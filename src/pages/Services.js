@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Outlet, Link } from "react-router-dom";
+import React, { useState,useEffect } from 'react';
+import {useParams,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark,faPlus, faMinus,faChevronLeft,faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -60,11 +60,43 @@ import './Pages.css';
 import CustomSwiper from '../components/CustomSwiper';
 
 function Services() {
-
+  const { tslug } = useParams();
+  const [slug,setSlug] = useState(tslug);
+  const navigate = useNavigate(); // Hook to navigate programmatically
+  const [sdata,setSdata] = useState([]);
+  const [hdata,setHdata] = useState([]);
+  const [SERdata,setSERdata] = useState([]);
+  const [Udata,setUdata] = useState([]);  
+  
+  const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
+  
+	useEffect(() => {
+    // Fetch data from API with the slug parameter
+    fetch(`https://shareittofriends.com/demo/growthedge/service-single.php?slug=${slug}`)  // API URL
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok'); // Handle HTTP errors
+        }
+        return response.json();  // Parse JSON
+      })
+      .then((data) => {
+        setSdata(data.sdata);  // Store the fetched data
+        setHdata(data.hdata);
+        setUdata(data.usecase);
+        setSERdata(data.serdata);
+		if (!data.sdata) {
+          navigate('/');
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error); // Handle any errors
+      });
+	}, [slug,navigate]);  // Runs whenever slug changes	
+  
   const AccordionItem = ({ title, content, isOpen, onToggle }) => (
 	<div className="accordion-item">
 		<div className="accordion-header d-flex justify-content-between" onClick={onToggle}>
-		<h5><span>01.</span> {title}</h5>
+		<h5 dangerouslySetInnerHTML={{ __html: title }}></h5>
 		<span><FontAwesomeIcon icon={isOpen ? faMinus : faPlus} /></span>
 		</div>
 		{isOpen && <div className="accordion-content" dangerouslySetInnerHTML={{ __html: content }}></div>}
@@ -78,44 +110,25 @@ function Services() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Function to handle the dropdown change
+  const handleSelectChange = (e) => {
+    setSlug(e.target.value); // Set the slug to the selected option value
+  };
 
   const [showBottomsheet_two, setshowBottomsheet_two] = useState(false);
 
   const handleClose_two = () => setshowBottomsheet_two(false);
   const handleShow_two = () => setshowBottomsheet_two(true);
   
-  	const slidesData2 = [
-		{ img: excel1, title: 'growth Marketing', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: excel2, title: 'E Commerce Management', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: excel3, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: excel1, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },
-		{ img: excel3, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: excel1, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },
-	];	
-	
-	const slidesData4 = [
-		{ title: 'Did you know?', content: 'Personalized Recommendations<small>could help to</small> [ Spike ] your conversion by 20% <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-	];	
 
-  	const slidesData5 = [
-		{ img: process1, title: 'Deep Dive', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
-		{ img: process2, title: 'Define', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
-		{ img: process3, title: 'Dream', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
-		{ img: process4, title: 'Design', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },
-		{ img: process1, title: 'Deploy', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },	
-		{ img: process3, title: 'Dream', content: 'Expertise in data analytics, UI/UX design, and tech development. Through' },
-	];	
-  
-  const accordionItems = [
-    { title: 'Accordion Item 1', content: '<b>How will it help us determine the pointers</b><br/><b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },
-    { title: 'Accordion Item 2', content: '<b>How will it help us determine the pointers</b><br/><b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },
-    { title: 'Accordion Item 3', content: '<b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.<b>How will it help us determine the pointers</b><br/>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers.' },	
-  ];
+// Ensure the component doesn't break if sdata is undefined or null
+const accordionItems = [
+    { title: sdata?.section_3_accrodian_title_1 || 'Default Title 1', content: sdata?.section_3_accrodian_content_1 || 'Default Content 1' },
+    { title: sdata?.section_3_accrodian_title_2 || 'Default Title 2', content: sdata?.section_3_accrodian_content_2 || 'Default Content 2' },
+    { title: sdata?.section_3_accrodian_title_3 || 'Default Title 3', content: sdata?.section_3_accrodian_content_3 || 'Default Content 3' },
+];
+
+
   
   	const renderCustomSlide_second = (slide, index) => (
 		<div className="slider_2_card_2">
@@ -124,34 +137,34 @@ function Services() {
 		src={index % 2 === 0 ? excel_bg1 : excel_bg2} // Alternates between excel_bg1 and excel_bg2
 		alt="Background"
 		/>
-		<img className="bgi2" src={slide.img}/>
+		<img className="bgi2" src={`${folderPath}services/${slide.slider_img}`}/>
 		<div className="contentbox">
-			<p className="title">{slide.title}</p>
-			<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
+			<p className="title">{slide.service_name}</p>
+			<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_desc }}></p>
 		</div>
-		<div className="imgbox">
+		<a href={`services/${slide.slug}`} className="imgbox">
 			<img className="btn_img" src={circle_btn}/>
 			<img className="arrow_right_btn" src={arrow_right}/>
+		</a>
 		</div>
-		</div>
-	);
+	);	
 	
 	const renderCustomSlide_three = (slide, index) => (
 		<div className={`slider_3_card_3 card card-body ${index % 2 === 0 ? 'cardbg3' : ''}`}>
 			<div className="d-flex justify-content-between">
-			<p className="ct">{slide.title}</p>
+			<p className="ct">{slide.slider_small_title}</p>
 			{/* Conditionally rendering image source */}
 			<img src={index % 2 === 0 ? trending : trending_dark} width={15} height={15} alt="Trending Icon" />
 			</div>
-			<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
-			<a href="#">Read case Studies</a>
+			<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_title }}></p>
+			<a href={`usecase/${slide.slug}`} >Read case Studies</a>
 		</div>
 	);  
 	
 	const renderCustomSlide_five = (slide, index) => (
 		<>
-		<h5 className="child_title_ mt-3">{slide.title} <img src={slide.img} width={20} height={20} /></h5>
-		<p className="cp_">{slide.content}</p>
+		<h5 className="child_title_ mt-3">{slide.title} <img src={`${folderPath}how-we-slider/${slide.pic}`} width={20} height={20} /></h5>
+		<p className="cp_">{slide.s_desc}</p>
 		<div className="circle_"></div>
 		</>
 	);  
@@ -166,32 +179,34 @@ function Services() {
 			
 			<div className="row align-items-center">
 				<div className="col-12 col-md-1 col-lg-1">
-					<a href="/growthedge/"><FontAwesomeIcon icon={faChevronLeft} /> Back</a>
+					<a href="/"><FontAwesomeIcon icon={faChevronLeft} /> Back</a>
 				</div>
 				<div className="col-12 col-md-9 col-lg-9"></div>
 				<div className="col-12 col-md-2 col-lg-2 position-relative">
 			        <FontAwesomeIcon icon={faChevronDown} className="position-absolute text-white" style={{ top: '50%', right: '20px', transform: 'translateY(-50%)' }} />
 
-					<select className="form-select">
-					<option>Services 1</option>
-					<option>Services 2</option>
-					<option>Services 3</option>
-					<option>Services 4</option>
-					</select>					
+					<select className="form-select" value={slug} onChange={handleSelectChange}>
+						{SERdata.map((service, index) => (
+						<option key={index} value={service.slug}> {/* Assuming slug is a field in service object */}
+							{service.service_name}
+						</option>
+						))}
+					</select>	
+	  
 				</div>
 				
 				<div className="col-12 col-lg-6 col-md-6">
 					
-					<h4>See Through<img src={trending} width={50} height={50} /></h4>
-					<h5>Business with advanced analytics</h5>
-					<h3>[ DATA ANALYTICS ]</h3>
-					<p>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers. Indulge in the assurance of authenticity with our collection of BIS </p>
+					<h4>{sdata.section_1_title1}<img src={trending} width={50} height={50} /></h4>
+					<h5>{sdata.section_1_title2}</h5>
+					<h3>{sdata.section_1_title3}</h3>
+					<p>{sdata.section_1_content}</p>
 					<a href="/" className="btn shadow-sm">Subscribe for service</a>
 					
 				</div>
 				
 				<div className="col-12 col-lg-6 col-md-6">
-					<img src={services}/>
+					<img src={`${folderPath}services/${sdata.section_1_sideimg}`}/>
 				</div>				
 				
 			</div>
@@ -205,30 +220,35 @@ function Services() {
 		<div className="container">
 			<div className="row align-items-center">
 				<div className="col-12 col-lg-6 col-md-6">
-					<h4>Introduction</h4>
-					<h5>Solution for <span>performance</span></h5>
+					<h4>{sdata.section_2_title1}</h4>
+					<h5 dangerouslySetInnerHTML={{ __html: sdata.section_2_subtitle1 }}></h5>
 					<div className="card p-2">
 						<img src={analytics}/>
 						<h5>Figures will help you figure out!</h5>
 						<p>was said by a Wise man Once -</p>
 					</div>
-					<p>Create data sets that drive your organization desired directions. Set up a flow to visualize you business into one. daily check points that will help you stay guided on your path of Success</p>
+					<p>{sdata.section_2_content}</p>
 				</div>
 				<div className="col-12 col-lg-6 col-md-6">
-					<h4>Why <span>Anaytics</span></h4>
-					<h5>A Bird eye view of your business!</h5>
-					<p><span>How will it help us determine the pointers?</span></p>
-					<p>Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers. Indulge in the assurance of authenticity with our collection of BIS </p>
-					<a href="/">Read more</a>
-					<p><span>Why would an Business needs data visualization?</span></p>
-					<p>We recognize that decisions can evolve. If you find the need to reconsider, rest assured you can easily return your jewellery within 15 days of purchase.</p>
-					<a href="/">Read more</a>
-					<p><span>100% Refund?</span></p>
-					<p>We recognize that decisions can evolve. If you find the need to reconsider, rest assured you can easily return your jewellery within 15 days of purchase.</p>
-					<a href="/">Read more</a>
-					<p><span>100% Refund?</span></p>
-					<p>We recognize that decisions can evolve. If you find the need to reconsider, rest assured you can easily return your jewellery within 15 days of purchase.</p>
-					<a href="/">Read more</a>
+					<h4 dangerouslySetInnerHTML={{ __html: sdata.section_2_title2 }}></h4>
+					<h5>{sdata.section_2_subtitle2}</h5>
+
+					<p><span>{sdata.section_2_multiple_title_1}</span></p>
+					<p>{sdata.section_2_multiple_content_1}</p>
+					<a href={sdata.section_2_multiple_link_1}>Read more</a>
+					
+					<p><span>{sdata.section_2_multiple_title_2}</span></p>
+					<p>{sdata.section_2_multiple_content_2}</p>
+					<a href={sdata.section_2_multiple_link_2}>Read more</a>
+					
+					<p><span>{sdata.section_2_multiple_title_3}</span></p>
+					<p>{sdata.section_2_multiple_content_3}</p>
+					<a href={sdata.section_2_multiple_link_3}>Read more</a>
+					
+					<p><span>{sdata.section_2_multiple_title_4}</span></p>
+					<p>{sdata.section_2_multiple_content_4}</p>
+					<a href={sdata.section_2_multiple_link_4}>Read more</a>
+
 				</div>
 				
 			</div>
@@ -250,7 +270,7 @@ function Services() {
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData4}
+		slides={Udata}
 		spaceBetween={10}
 		slidesPerView={6}
 		renderSlide={renderCustomSlide_three}
@@ -270,8 +290,8 @@ function Services() {
 			
 				<div className="col-12 col-md-6 col-lg-6">
 					
-					<h4 className="h4_title">Our <span>Deliverables</span></h4>
-					<h5 className="h5_title">Coz we believe in delivering the best</h5>
+					<h4 className="h4_title" dangerouslySetInnerHTML={{ __html: sdata.section_3_title1 }} ></h4>
+					<h5 className="h5_title">{sdata.section_3_subtitle1}</h5>
 					
 <div className="accordion">
       {accordionItems.map((item, index) => (
@@ -296,37 +316,37 @@ function Services() {
 					<div className="col-lg-4 col-md-4 col-12">
 						
 						<div className="sb_card5__ p-2">
-								<img src={user} width={50} height={50} />
-								<h4>user centric</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}services/${sdata.section_3_card2_img}`} width={50} height={50} />
+								<h4>{sdata.section_3_card2_title}</h4>
+								<p>{sdata.section_3_card2_content}</p>
 						</div>
 						
 					</div>
 					<div className="col-lg-4 col-md-4 col-12">
 						<div className="sb_card6_ p-2">
-								<img src={zap} width={50} height={50} />
-								<h4>user centric</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}services/${sdata.section_3_card3_img}`} width={50} height={50} />
+								<h4>{sdata.section_3_card3_title}</h4>
+								<p>{sdata.section_3_card3_content}</p>
 						</div>
 					</div>
 					<div className="col-lg-4 col-md-4 col-12">
 						<div className="sb_card3 p-2">
-								<img src={sun} width={50} height={50} />
-								<h4>VALUES</h4>
+								<img src={`${folderPath}services/${sdata.section_3_card1_img}`} width={50} height={50} />
+								<h4>{sdata.section_3_card1_title}</h4>
 						</div>
 					</div>
 					<div className="col-lg-4 col-md-4 col-12">
 						<div className="sb_card4 p-2">
-								<img src={sunrise} width={50} height={50} />
-								<h4 className="h4">SCALEABILITY</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}services/${sdata.section_3_card4_img}`} width={50} height={50} />
+								<h4>{sdata.section_3_card4_title}</h4>
+								<p>{sdata.section_3_card4_content}</p>
 						</div>
 					</div>
 					<div className="col-lg-4 col-md-4 col-12">
 						<div className="sb_card5_ p-2">
-								<img src={zap} width={50} height={50} />
-								<h4>SCALEABILITY</h4>
-								<p>Our mission is to harness the power of data analytic</p>
+								<img src={`${folderPath}services/${sdata.section_3_card5_img}`} width={50} height={50} />
+								<h4>{sdata.section_3_card5_title}</h4>
+								<p>{sdata.section_3_card5_content}</p>
 						</div>
 					</div>					
 
@@ -349,7 +369,7 @@ function Services() {
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData5}
+		slides={hdata}
 		spaceBetween={15}
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_five}
@@ -375,7 +395,7 @@ function Services() {
 		</div>
 		
 		<CustomSwiper 
-		slides={slidesData2}
+		slides={SERdata}
 		spaceBetween={15}
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
@@ -397,7 +417,7 @@ function Services() {
           <div className="modal-content">
 
             <div className="modal-header">
-              <h5 className="modal-title text-center">All Services (11)</h5>
+              <h5 className="modal-title text-center">All Services </h5>
               <span type="button" className="btn-close1" onClick={handleClose_two}>
 				<FontAwesomeIcon icon={faXmark} />
 			  </span>
@@ -409,18 +429,19 @@ function Services() {
 			
 				<div className="row pb-4">
 					
-					{slidesData2.map((slide, index) => (
+					{SERdata.map((slide, index) => (
 						<div className="col-12 col-lg-4 col-md-4 p-2">
 						<div className="slider_2_card_2_services">
-						<img
+						<a href={`services/${slide.slug}`}><img
 						className="bgi1"
 						src={index % 2 === 0 ? excel_bg1 : excel_bg2} // Alternates between excel_bg1 and excel_bg2
 						alt="Background"
 						/>
-						<img className="bgi2" src={slide.img}/>
+						<img className="bgi2" src={`${folderPath}services/${slide.slider_img}`}/>
+						</a>
 						<div className="contentbox">
-							<p className="title">{slide.title}</p>
-							<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
+							<p className="title">{slide.service_name}</p>
+							<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_desc }}></p>
 						</div>
 						</div>
 						</div>

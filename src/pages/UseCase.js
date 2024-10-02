@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark,faMagnifyingGlass,faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -68,6 +68,26 @@ function UseCase() {
 	const [is_Use_Cases,setis_Use_Cases] = useState("");
 	const [is_blog_active, setIs_blog_active] = useState("");
 	const [is_Use_Cases_active,setis_Use_Cases_active] = useState("btn-active");
+	const [ucbdata,setUcbdata] = useState([]);
+	const [Udata,setUdata] = useState([]);  
+	const [Bdata,setBdata] = useState([]);  
+  
+	const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
+	
+	useEffect(() => {
+		// Fetch data from API
+		fetch('https://shareittofriends.com/demo/growthedge/usecase.php')  // Replace with your actual API URL
+		.then((response) => response.json())  // Parse JSON
+		.then((data) => {
+			setUcbdata(data.ucbdata);  // Store the fetched data
+			setUdata(data.usecase);
+			setBdata(data.blog);
+		})
+		.catch((error) => {
+			console.error('Error fetching data:', error);
+		});
+	}, []);  // Empty array means this runs once when the component mounts
+
 	
 	const setBlog = () => {
     setIs_blog("d-none");
@@ -85,31 +105,20 @@ function UseCase() {
 
 
 	const [currentPage, setCurrentPage] = useState(1);
-	const totalPages = 10; // Example total pages
+    const postsPerPage = 8; // Set how many items you want to show per page
 
-	const paginate = (pageNumber) => {
-		setCurrentPage(pageNumber);
-	};
-	
-	const slidesData4 = [
-		{ title: 'Did you know?', content: 'Personalized Recommendations<small>could help to</small> [ Spike ] your conversion by 20% <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },	
-		{ title: 'Did you know?', content: 'TruthWorthy Websites <small>tend to have healthier conversion by Using</small> <span>[ Maximum ]</span> potential of Marketing <small>Compared to traditional recommendation</small>' },		
-	];	
-	
-	const slidesData5 = [
-		{ img: blog, uimg: starbucks, title: 'growth Marketing', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: blog, uimg: starbucks, title: 'E Commerce Management', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: blog, uimg: starbucks, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: blog, uimg: starbucks, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },
-		{ img: blog, uimg: starbucks, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },	
-		{ img: blog, uimg: starbucks, title: 'Market Product FiT', content: 'All scope of work to deployment marketing strategies included' },
-	];		
+    // Calculate total pages
+    const totalBPages = Math.ceil(Bdata.length / postsPerPage);
+	const totalUPages = Math.ceil(Udata.length / postsPerPage);
+
+    // Get current posts based on the current page
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentBPosts = Bdata.slice(indexOfFirstPost, indexOfLastPost);
+	const currentUPosts = Udata.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Function to handle page change
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 	
 	return(
 		<>
@@ -122,9 +131,9 @@ function UseCase() {
 		
 					<div className="col-12 col-lg-7 col-md-7">
 						
-						<h4 className="h4">The Ultimate Guide <img src={trending} width={20} height={20} /></h4>
-						<h5 className="h5">60 pages for next 60 days</h5>
-						<h3 className="h3">[ THE VIOLET JOURNAL ]</h3>
+						<h4 className="h4">{ucbdata.section_1_title} <img src={`${folderPath}ucb_page/${ucbdata.section_1_title_img}`} width={20} height={20} /></h4>
+						<h5 className="h5">{ucbdata.section_1_subtitle}</h5>
+						<h3 className="h3">{ucbdata.section_1_childtitle}</h3>
 						
 						<ul className="ul1">
 							<li>Summary</li>
@@ -136,20 +145,20 @@ function UseCase() {
 							<div className="col-lg-6 col-md-6 col-12">
 								<div className="row">
 								<div className="col-6 col-md-3 col-lg-3">
-									<h4 className="h4_">12</h4>
-									<p className="p_">Chapters</p>
+									<h4 className="h4_">{ucbdata.section_1_m_title1}</h4>
+									<p className="p_">{ucbdata.section_1_m_content1}</p>
 								</div>
 								<div className="col-6 col-md-3 col-lg-3">
-									<h4 className="h4_">46</h4>
-									<p className="p_">Articles</p>
+									<h4 className="h4_">{ucbdata.section_1_m_title2}</h4>
+									<p className="p_">{ucbdata.section_1_m_content2}</p>
 								</div>
 								<div className="col-6 col-md-3 col-lg-3 m-0 p-0">
-									<h4 className="h4_">21</h4>
-									<p className="p_">Uses Cases</p>
+									<h4 className="h4_">{ucbdata.section_1_m_title3}</h4>
+									<p className="p_">{ucbdata.section_1_m_content3}</p>
 								</div>
 								<div className="col-6 col-md-3 col-lg-3 m-0 p-0">
-									<h4 className="h4_">312+</h4>
-									<p className="p_">Downloads</p>
+									<h4 className="h4_">{ucbdata.section_1_m_title4}</h4>
+									<p className="p_">{ucbdata.section_1_m_content4}</p>
 								</div>								
 								</div>
 							</div>
@@ -158,7 +167,7 @@ function UseCase() {
 						
 						</div>
 						
-						<p className="p mb-4">Indulge in the assurance of authenticity with our collection of BIS Hallmarked Jewellery, a testament to trust, proudly offered by Kalyan Jewellers. Indulge in the assurance of authenticity with our collection of BIS </p>
+						<p className="p mb-4">{ucbdata.section_1_content}</p>
 						
 						<a className="btn btn-active mt-0">DOWNLOAD FREE COPY</a>
 						
@@ -166,7 +175,7 @@ function UseCase() {
 					</div>
 					
 					<div className="col-12 col-lg-5 col-md-5">
-						<img src={use_case} className="mainimg"/>
+						<img src={`${folderPath}ucb_page/${ucbdata.section_1_sideimg}`} className="mainimg"/>
 					</div>
 		
 					<div className="col-lg-4 col-md-4">
@@ -200,20 +209,20 @@ function UseCase() {
 				<div className="row">
 				
 					<div className="col-md-12 col-lg-12 mt-0 mb-2">
-						<h4>Uses Cases <span>Blogs</span></h4>
+						<h4>Read <span>Use Cases</span></h4>
 						<h5>Based on Real incidents</h5>
 					</div>
 					
-					{slidesData4.map((slide, index) => (
+					{currentUPosts.map((slide, index) => (
 					<div className="col-md-3 col-lg-3 mt-2 mb-2 pb-0">
 						<div className={`slider_3_card_3_ card card-body ${index % 2 === 0 ? 'cardbg3' : ''}`}>
 							<div className="d-flex justify-content-between">
-							<p className="ct">{slide.title}</p>
+							<p className="ct">{slide.slider_small_title}</p>
 							{/* Conditionally rendering image source */}
 							<img src={index % 2 === 0 ? trending : trending_dark} width={15} height={15} alt="Trending Icon" />
 							</div>
-							<p className="content" dangerouslySetInnerHTML={{ __html: slide.content }}></p>
-							<a href={`/usecase`}>Read case Studies</a>
+							<p className="content" dangerouslySetInnerHTML={{ __html: slide.slider_title }}></p>
+							<a href={`/usecase/${slide.slug}`}>Read case Studies</a>
 						</div>		
 					</div>
 					 ))}
@@ -222,7 +231,7 @@ function UseCase() {
 
 			<Pagination 
 				currentPage={currentPage} 
-				totalPages={totalPages} 
+				totalPages={totalUPages} 
 				paginate={paginate} 
 			/>
 	  
@@ -241,9 +250,9 @@ function UseCase() {
 				</div>
 				<div className="col-md-7 col-lg-7 col-12">
 					<div className="contain mt-1">
-					<p className="title">How to Analyse website performance and monitor key Parameters?</p>
-					<p className="p">lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech development. Through expertise in data analytics, UI/UX design, and tech development. Through </p>
-					<p className="sub_title">Upcoming Cases Study: 24/09/2024</p>
+					<p className="title">{ucbdata.uc_section_card_title}</p>
+					<p className="p">{ucbdata.uc_section_card_content}</p>
+					<p className="sub_title">{ucbdata.uc_section_card_subtitle}</p>
 					<a className="btn d-block">Subscribe to blogs <img src={send} width={15} height={15} /></a>
 					</div>
 				</div>
@@ -262,25 +271,33 @@ function UseCase() {
 				<div className="row">
 				
 					<div className="col-md-12 col-lg-12 mb-2">
-						<h4>Read <span>Use Cases</span></h4>
+						<h4>Read <span>Blogs</span></h4>
 						<h5 className="h5">Based on Real incidents</h5>
 					</div>
 					
-					{slidesData4.map((slide, index) => (
+					{currentBPosts.map((slide, index) => (
 					<div className="col-md-3 col-lg-3 mt-2 mb-2 pb-0">
-					<a href={`/blog`}>
+					<a href={`/blog/${slide.slug}`}>
 						<div className="slider_4_card_4_ card">
-							<img src={blog}/>
+							<img src={`${folderPath}blogs/${slide.slider_img}`}/>
 							<div className={`content ${index % 2 === 0 ? 'cardbg4_' : ''}`}>
-								<img className="shadow-sm" src={starbucks} width={50} height={50} />	
-								<h5>Brand Name</h5>
-								<p>Borem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, Borem ipsum dolor sit amet
+								<img className="shadow-sm" src={`${folderPath}blogs/${slide.slider_icon}`} width={50} height={50} />	
+								<h5>{slide.slider_title}</h5>
+								<p>{slide.slider_desc}
 								</p>
 								<div className="ul">
-								<small className="li">#Segments</small>
-								<small className="li">#Industry</small>
-								<small className="li">#DataVisulization</small>
-								<small className="li">#SuccessRatio</small>
+								
+								{(() => {
+											// Check if home is defined and has the property section_5_card1_multiple_content
+											if (typeof slide.slider_tags === 'string') {
+											const slider_tags = slide.slider_tags.split(',');
+											return slider_tags.map((content2, index) => (
+												<small className="li" key={index}>{content2.trim()}</small> // Trim whitespace
+											));
+											} else {
+											return <small></small>; // Fallback when content is undefined
+											}
+								})()}
 								</div>
 							</div>	
 						</div>
@@ -292,7 +309,7 @@ function UseCase() {
 				
 				<Pagination 
 				currentPage={currentPage} 
-				totalPages={totalPages} 
+				totalPages={totalBPages} 
 				paginate={paginate} 
 				/>
 
@@ -310,9 +327,9 @@ function UseCase() {
 				</div>
 				<div className="col-md-7 col-lg-7 col-12">
 					<div className="contain mt-1">
-					<p className="title">How to Analyse website performance and monitor key Parameters?</p>
-					<p className="p">lifelong learners, continuously seeking to expand our knowledge, skills, and expertise in data analytics, UI/UX design, and tech development. Through expertise in data analytics, UI/UX design, and tech development. Through </p>
-					<p className="sub_title">Upcoming Cases Study: 24/09/2024</p>
+					<p className="title">{ucbdata.b_section_card_title}</p>
+					<p className="p">{ucbdata.b_section_card_content}</p>
+					<p className="sub_title">{ucbdata.b_section_card_subtitle}</p>
 					<a className="btn d-block">Subscribe to blogs <img src={send} width={15} height={15} /></a>
 					</div>
 				</div>
