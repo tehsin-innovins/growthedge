@@ -114,7 +114,7 @@ function Footer(){
   
   useEffect(() => {
     // Fetch data from API
-    fetch('https://shareittofriends.com/demo/growthedge/contactus.php')  // Replace with your actual API URL
+    fetch('https://shareittofriends.com/demo/growthedge/blog.php')  // Replace with your actual API URL
       .then((response) => response.json())  // Parse JSON
       .then((data) => {
         setContactus(data.contactdata);  // Store the fetched data
