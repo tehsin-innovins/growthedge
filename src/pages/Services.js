@@ -213,7 +213,7 @@ const accordionItems = [
 					<h5>{sdata.section_1_title2}</h5>
 					<h3>{sdata.section_1_title3}</h3>
 					<p>{sdata.section_1_content}</p>
-					<a onClick={ShowEBookModal} className="btn shadow-sm">Subscribe for service</a>
+					<a href={sdata.section_1_subscribe_link} className="btn shadow-sm">Subscribe for service</a>
 					
 				</div>
 				
