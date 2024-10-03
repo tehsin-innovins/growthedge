@@ -152,7 +152,7 @@ function Home() {
 		<div className="slider_5_card_5">
 			<div className="row">
 				<div className="col-lg-4 col-md-4">
-					<img src={`${folderPath}testimonials/${slide.pic}`}/>
+					<img src={`${folderPath}testimonials/${slide.pic}`} className="testimonials-img"/>
 				</div>
 				<div className="col-lg-8 col-md-8">				
 					<p className="title">{slide.name}</p>
