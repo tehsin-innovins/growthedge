@@ -185,13 +185,13 @@ function BlogDetails() {
 				</div>				
 
 				<div className="col-lg-6 col-md-6 mt-4">
-					<img src={`${folderPath}usecases/${usdata.section_1_sideimg}`}  className="mt-0 pt-0"/>
+					<img src={`${folderPath}blogs/${usdata.section_1_sideimg}`}  className="mt-0 pt-0"/>
 				</div>				
 
 				<div className="col-lg-6 col-md-6 mt-4">
 					<h4 className="mt-4">{usdata.section_2_title}</h4>
 					<h5 className="mb-0"  dangerouslySetInnerHTML={{ __html: usdata.section_2_subtitle }}></h5>
-					<img src={`${folderPath}usecases/${usdata.section_2_sideimg}`} />
+					<img src={`${folderPath}blogs/${usdata.section_2_sideimg}`} />
 				</div>				
 				
 				<div className="col-lg-6 col-md-6 mt-4 pt-1">
@@ -225,13 +225,13 @@ function BlogDetails() {
 				</div>				
 				
 				<div className="col-lg-6 col-md-6 mt-4 mb-4">
-					<img src={`${folderPath}usecases/${usdata.section_3_sideimg}`} className="mimg"/>
+					<img src={`${folderPath}blogs/${usdata.section_3_sideimg}`} className="mimg"/>
 				</div>				
 				
 				<div className="col-lg-12 col-md-12 mt-4">
 					<h4	>{usdata.section_4_title1}</h4>
 					<h5 className="m-0"  dangerouslySetInnerHTML={{ __html: usdata.section_4_subtitle1 }}></h5>
-					<img src={`${folderPath}usecases/${usdata.section_4_sideimg}`} />
+					<img src={`${folderPath}blogs/${usdata.section_4_sideimg}`} />
 				</div>										
 
 				<div className="col-lg-12 col-md-12 mb-4">
