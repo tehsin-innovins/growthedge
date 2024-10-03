@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark,faMagnifyingGlass,faChevronLeft,faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';        // Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';   // Bootstrap JavaScript
+import { Modal } from 'bootstrap';                    // Import the Modal component
 import goal from '../assets/home/goal.png'; // Import the PNG file
 import trending from '../assets/home/trending.svg'; // Import the SVG file
 import trending_dark from '../assets/home/trending_dark.svg'; // Import the SVG file
@@ -71,6 +72,17 @@ function UseCase() {
 	const [ucbdata,setUcbdata] = useState([]);
 	const [Udata,setUdata] = useState([]);  
 	const [Bdata,setBdata] = useState([]);  
+	
+	const ShowEBookModal = () => {
+		const modalElement = document.getElementById("FreeEbookModal");
+
+		if (modalElement) {
+			const modal = new Modal(modalElement); // Initialize the Bootstrap modal
+			modal.show(); // Show the modal
+		} else {
+			console.error("Modal element not found!");
+		}
+	};
   
 	const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
 	
@@ -169,7 +181,7 @@ function UseCase() {
 						
 						<p className="p mb-4">{ucbdata.section_1_content}</p>
 						
-						<a className="btn btn-active mt-0">DOWNLOAD FREE COPY</a>
+						<a onClick={ShowEBookModal} className="btn btn-active mt-0">DOWNLOAD FREE COPY</a>
 						
 						
 					</div>

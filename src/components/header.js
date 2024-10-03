@@ -4,8 +4,9 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import trending from '../assets/home/trending.svg'; // Import the SVG file
 import $ from 'jquery';
 import { useLocation } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';        // Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';   // Bootstrap JavaScript
+import { Modal } from 'bootstrap';                    // Import the Modal component
 import { Outlet, Link } from "react-router-dom";
 import logo from '../assets/home/logo.svg'; // Import the SVG file
 import call from '../assets/home/call.svg'; // Import the SVG file
@@ -22,7 +23,16 @@ import CustomSwiper from '../components/CustomSwiper';
 
 function Header(){
   const location = useLocation();
-  
+  const ShowEBookModal = () => {
+    const modalElement = document.getElementById("FreeEbookModal");
+
+  if (modalElement) {
+    const modal = new Modal(modalElement); // Initialize the Bootstrap modal
+		modal.show(); // Show the modal
+	} else {
+		console.error("Modal element not found!");
+	}
+  };
   const [contactus,setContactus] = useState([]);
   const [slider1,setSlider1] = useState([]);
   const [slider2,setSlider2] = useState([]);
@@ -204,7 +214,7 @@ function Header(){
 							<Link onClick={handleShow_two}>Contact Us</Link>
 						</li>			
 						<li>
-							<Link>Free Ebook</Link>
+							<Link onClick={ShowEBookModal}>Free Ebook</Link>
 						</li>						
 					</ul>
 				</div>

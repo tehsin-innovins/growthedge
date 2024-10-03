@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import './App.css';
 import Layout from "./components/Layout";
 import Preloader from "./components/Preloader";
 import Home from "./pages/Home";
@@ -13,35 +10,48 @@ import Services from "./pages/Services";
 import UseCase from "./pages/UseCase";
 import ContactUs from "./pages/ContactUs";
 import NoPage from "./pages/NoPage";
+import FreeEbookModal from "./components/FreeEbookModal";
 
-// Preloader logic needs to be inside the router
 function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <AppContent />  {/* Ensure AppContent is inside BrowserRouter */}
     </BrowserRouter>
   );
 }
 
-// The actual content of the app where location is tracked
 function AppContent() {
   const [loading, setLoading] = useState(false);
-  const location = useLocation(); // useLocation is valid here because it's inside BrowserRouter
+  const location = useLocation();
+  const isFirstLoad = useRef(true); // Ref to track if it's the first load
 
   useEffect(() => {
-    // Show preloader on route change
-	console.log(location);
-    setLoading(true);
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000); // Simulate loading time
+    // Show preloader only on initial load and when location changes
+    if (isFirstLoad.current) {
+      setLoading(true); // Show loading on first load
+      isFirstLoad.current = false; // Mark as loaded
+      const timer = setTimeout(() => {
+        setLoading(false); // Hide preloader after timeout
+      }, 1000); // Adjust the timeout for desired loading time
 
-    return () => clearTimeout(timer); // Clean up
-  }, [location]); // Effect runs on route change
+      return () => clearTimeout(timer); // Clean up the timer
+    } else {
+      // Show preloader only on route change, not on modal interaction
+      setLoading(true);
+      const timer = setTimeout(() => {
+        setLoading(false); // Hide preloader after timeout
+      }, 1000); // Adjust the timeout for desired loading time
+
+      return () => clearTimeout(timer); // Clean up the timer
+    }
+  }, [location]);
 
   return (
     <>
+      {/* Preloader is only shown during the first load and on route change */}
       {loading && <Preloader />}
+
+      {/* Main content of the app */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -54,6 +64,9 @@ function AppContent() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
+
+      {/* Global modal, always available */}
+      <FreeEbookModal />
     </>
   );
 }

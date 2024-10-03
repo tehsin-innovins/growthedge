@@ -1062,3 +1062,192 @@ body{
   scrollbar-width: thin; /* Thin scrollbar */
   scrollbar-color: #AA81FB #525252; /* Thumb and track colors */
 }
+
+#FreeEbookModal .ebookmodal-content{
+	padding: 16px 24px 24px 24px;
+	gap: 16px;
+	border-radius: 20px 20px 0px 0px;
+	background: linear-gradient(180deg, #B361E3 0%, #4B287B 100%);
+	color:#FFFFFF;
+	border:0px;
+}
+
+#FreeEbookModal .btn-close1{
+	position:absolute;
+	font-size:20px;
+	top:15px;
+	right:20px;
+	color:#ffffff!important;
+}
+
+#FreeEbookModal .ebookcard{
+	border: 1px solid #D9DBE9;
+	padding: 24px 12px 24px 12px;
+	gap: 12px;
+	border-radius: 24px;
+}
+
+#FreeEbookModal .ebookcard .cimg{
+	width:200px!important;
+	height:200px!important;
+	border-radius:20px;
+}
+
+#FreeEbookModal .ebookcard h5{
+	font-family: Roboto Flex;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: center;
+	color:#4E4B66;
+}
+
+#FreeEbookModal .ebookcard p{
+	font-family: Roboto Flex;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: center;
+	color:#4E4B66;
+}
+
+#FreeEbookModal .ebookcard button{
+	background: linear-gradient(270deg, #AA81FB 0%, #AA81FB 100%);
+	color:#FFFFFF;
+	padding: 12px 16px 12px 16px;
+	gap: 12px;
+	border-radius: 8px;	
+	font-family: Raleway;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 1.25px;
+	text-align: center;	
+}
+
+#FreeEbookModal .modal-title{
+	font-family: Raleway;
+	font-size: 22px;
+	font-weight: 600;
+	line-height: 25.83px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+#FreeEbookModal .h4{
+	font-family: Raleway;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.18px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff;
+}
+
+#FreeEbookModal .h5{
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 23.48px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;
+}
+
+#FreeEbookModal .h4_{
+	font-family: Raleway;
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 32.87px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;
+}
+
+#FreeEbookModal .nav{
+	padding: 6px 4px 6px 4px;
+	gap: 16px;
+	border-radius: 4px;
+	background: #333333;
+	color:#ffffff;
+	box-shadow: 0px 2px 3px 0px #58585880 inset;	
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 20px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: center;	
+}
+#FreeEbookModal a{
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	border-radius: 4px;
+}
+#FreeEbookModal .nav .active{
+	padding: 6px 8px 6px 8px;
+	gap: 8px;
+	border-radius: 4px;
+	background:#AA81FB;
+	color:#ffffff;
+	border: 2px solid;
+	border-image-source: linear-gradient(180deg, #C9ADFF 0%, #8A6FBF 93.75%);
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: center;
+}
+
+#FreeEbookModal .p{
+	font-family: Roboto Flex;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: left;
+	color:#ffffff;
+}
+
+#FreeEbookModal .stitle{
+	font-family: Roboto Flex;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 23.44px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	margin-bottom:7px;
+	color:#ffffff;	
+}
+
+#FreeEbookModal .scontent{
+	font-family: Raleway;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 14.09px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	margin-top:7px;
+	color:#ffffff;	
+}
+
+#FreeEbookModal .index{
+	margin-top:30px!important;
+	list-style:decimal-leading-zero;
+}
+
+#FreeEbookModal .index li{
+	height: 40px;
+	padding-left:5px;
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.44px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff;
+}

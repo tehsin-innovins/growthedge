@@ -2,8 +2,9 @@ import React, { useState,useEffect } from 'react';
 import {useParams,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark,faPlus, faMinus,faChevronLeft,faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';        // Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';   // Bootstrap JavaScript
+import { Modal } from 'bootstrap';                    // Import the Modal component
 import goal from '../assets/home/goal.png'; // Import the PNG file
 import trending from '../assets/home/trending.svg'; // Import the SVG file
 import trending_dark from '../assets/home/trending_dark.svg'; // Import the SVG file
@@ -67,6 +68,17 @@ function Services() {
   const [hdata,setHdata] = useState([]);
   const [SERdata,setSERdata] = useState([]);
   const [Udata,setUdata] = useState([]);  
+  
+  const ShowEBookModal = () => {
+		const modalElement = document.getElementById("FreeEbookModal");
+
+		if (modalElement) {
+			const modal = new Modal(modalElement); // Initialize the Bootstrap modal
+			modal.show(); // Show the modal
+		} else {
+			console.error("Modal element not found!");
+		}
+   };
   
   const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
   
@@ -201,7 +213,7 @@ const accordionItems = [
 					<h5>{sdata.section_1_title2}</h5>
 					<h3>{sdata.section_1_title3}</h3>
 					<p>{sdata.section_1_content}</p>
-					<a href="/" className="btn shadow-sm">Subscribe for service</a>
+					<a onClick={ShowEBookModal} className="btn shadow-sm">Subscribe for service</a>
 					
 				</div>
 				

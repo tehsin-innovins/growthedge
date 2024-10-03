@@ -115,7 +115,7 @@ function Home() {
         setErrors({});
 
         try {
-            const response = await fetch('http://localhost/innovins/growthedge_backpanel/sch_common.php', {
+            const response = await fetch('https://shareittofriends.com/demo/growthedge/sch_common.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
