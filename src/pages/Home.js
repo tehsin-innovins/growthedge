@@ -42,7 +42,110 @@ function Home() {
   const [SERdata,setSERdata] = useState([]);
   const [Udata,setUdata] = useState([]);  
   const [Bdata,setBdata] = useState([]);  
+  const [errors, setErrors] = useState({});
+  const [formData, setFormData] = useState({
+	schdate: '',
+	schfromtime: '',
+	schtotime: '',
+    schname: '',
+    schmobile: '',
+    schemail: '',
+    schmsg: ''
+  });
   
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+  
+  
+	const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const newErrors = {};
+
+        // Validation
+		
+		if (!formData.schdate || formData.schdate.trim() === '') {
+            newErrors.schdate = 'Date is required';
+        }
+		
+		if (!formData.schfromtime || formData.schfromtime.trim() === '') {
+            newErrors.schfromtime = 'From Time is required';
+        }
+		
+		if (!formData.schtotime || formData.schtotime.trim() === '') {
+            newErrors.schtotime = 'To Time is required';
+        }
+		
+		if (!formData.schname || formData.schname.trim() === '') {
+            newErrors.schname = 'Name is required';
+        }
+
+        if (!formData.schmobile || formData.schmobile.trim() === '') {
+            newErrors.schmobile = 'Mobile number is required';
+        } else if (!/^\d{10}$/.test(formData.schmobile)) {
+            newErrors.schmobile = 'Mobile number must be 10 digits';
+        }
+
+        if (!formData.schemail || formData.schemail.trim() === '') {
+            newErrors.schemail = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.schemail)) { // Basic email format validation
+            newErrors.schemail = 'Invalid email format';
+        }
+
+        if (!formData.schmsg || formData.schmsg.trim() === '') {
+            newErrors.schmsg = 'Message is required';
+        }
+
+        // If there are validation errors, update the error state and focus on the first error field
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+
+            // Focus the first invalid input field
+            const firstErrorKey = Object.keys(newErrors)[0];
+            document.getElementById(firstErrorKey).focus();
+
+            return; // Stop submission
+        }
+
+        // If validation passes, clear errors and proceed with the fetch request
+        setErrors({});
+
+        try {
+            const response = await fetch('http://localhost/innovins/growthedge_backpanel/sch_common.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+            //console.log(data);
+
+            if (data.status === 'success') {
+                alert(data.message);
+				setFormData({
+					schdate: '',
+					schfromtime: '',
+					schtotime: '',
+					schname: '',
+					schmobile: '',
+					schemail: '',
+					schmsg: ''
+				});
+            } else {
+                alert('Error: ' + data.message);
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was a problem submitting the form.');
+        }
+    };
+	
   const folderPath = 'https://shareittofriends.com/demo/growthedge/uploads/';  
   
   useEffect(() => {
@@ -766,17 +869,19 @@ function Home() {
             </div>
 
             <div className="modal-body">
-				<form action="">
-					<lable className="text-white">Drop your Queries</lable>
+				<form onSubmit={handleSubmit}>
+					<lable className="text-white">Select your preferred date</lable>
 					<div className="mb-3 mt-3">
-						<input type="date" className="custom-input form-control" id="sdate" placeholder="Select Date" name="sdate"/>
+						<input type="date" value={formData.schdate} style={{ borderColor: errors.schdate ? 'red' : '' }} onChange={handleChange} className="custom-input form-control" id="schdate" placeholder="Select Date" name="schdate"/>
+						{errors.schdate && <span style={{ color: 'white' }}>{errors.schdate}</span>}
 					</div>
 					<lable className="text-white">Select your preferred timings</lable>
 					<div className="row">
 						<div className="col-lg-5 col-md-5">
 							<div className="mb-3 mt-3">
 								
-								<input type="time" className="custom-input1 form-control" id="sdate" placeholder="Select Date" name="sdate"/>
+								<input type="time" value={formData.schfromtime} style={{ borderColor: errors.schfromtime ? 'red' : '' }} onChange={handleChange} className="custom-input1 form-control" id="schfromtime" placeholder="Select Date" name="schfromtime"/>
+								{errors.schfromtime && <span style={{ color: 'white' }}>{errors.schfromtime}</span>}
 							</div>
 						</div>
 						<div className="col-lg-2 col-md-2">
@@ -786,21 +891,26 @@ function Home() {
 						</div>
 						<div className="col-lg-5 col-md-5">
 							<div className="mb-3 mt-3">
-								<input type="time" className="custom-input1 form-control" id="sdate" placeholder="Select Date" name="sdate"/>
+								<input type="time" value={formData.schtotime} style={{ borderColor: errors.schtotime ? 'red' : '' }} onChange={handleChange} className="custom-input1 form-control" id="schtotime" placeholder="Select Date" name="schtotime"/>
+								{errors.schtotime && <span style={{ color: 'white' }}>{errors.schtotime}</span>}
 							</div>
 						</div>
 					</div>
 					<div class="mb-3 mt-3">
-						<input type="text" className="custom-input form-control" id="fname" placeholder="Your Full Name" name="fname"/>
+						<input type="text" value={formData.schname} style={{ borderColor: errors.schname ? 'red' : '' }} onChange={handleChange} className="custom-input form-control" id="schname" placeholder="Your Full Name" name="schname"/>
+						{errors.schname && <span style={{ color: 'white' }}>{errors.schname}</span>}
 					</div>
 					<div class="mb-3 mt-3">
-						<input type="text" className="custom-input form-control" id="mobile" placeholder="Your Mobile Number" name="mobile"/>
+						<input type="text" value={formData.schmobile} style={{ borderColor: errors.schmobile ? 'red' : '' }} onChange={handleChange} className="custom-input form-control" id="schmobile" placeholder="Your Mobile Number" name="schmobile"/>
+						{errors.schmobile && <span style={{ color: 'white' }}>{errors.schmobile}</span>}
 					</div>
 					<div class="mb-3 mt-3">
-						<input type="text" className="custom-input form-control" id="email" placeholder="Your Email Address" name="email"/>
+						<input type="text" value={formData.schemail} style={{ borderColor: errors.schemail ? 'red' : '' }} onChange={handleChange} className="custom-input form-control" id="schemail" placeholder="Your Email Address" name="schemail"/>
+						{errors.schemail && <span style={{ color: 'white' }}>{errors.schemail}</span>}
 					</div>
 					<div class="mb-3 mt-3">
-						<textarea className="custom-textarea form-control" rows="5" id="msg" name="msg" placeholder="Put your thoughts Here!"></textarea>
+						<textarea value={formData.schmsg} style={{ borderColor: errors.schmsg ? 'red' : '' }} onChange={handleChange} className="custom-textarea form-control" rows="5" id="schmsg" name="schmsg" placeholder="Put your thoughts Here!"></textarea>
+						{errors.schmsg && <span style={{ color: 'white' }}>{errors.schmsg}</span>}
 					</div>  
 					<button type="submit" className="btn mb-4">Submit</button>
 				</form>

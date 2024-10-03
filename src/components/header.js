@@ -97,7 +97,7 @@ function Header(){
             //console.log(data);
 
             if (data.status === 'success') {
-                alert('Form submitted successfully!');
+                alert( data.message);
 				setFormData({
 					name: '',
 					mobile: '',
