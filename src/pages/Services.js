@@ -67,6 +67,7 @@ function Services() {
   const [sdata,setSdata] = useState([]);
   const [hdata,setHdata] = useState([]);
   const [SERdata,setSERdata] = useState([]);
+  const [Bdata,setBdata] = useState([]); 
   const [Udata,setUdata] = useState([]);  
   
   const ShowEBookModal = () => {
@@ -95,6 +96,7 @@ function Services() {
         setSdata(data.sdata);  // Store the fetched data
         setHdata(data.hdata);
         setUdata(data.usecase);
+		setBdata(data.blog);
         setSERdata(data.serdata);
 		if (!data.sdata) {
           navigate('/');
@@ -172,6 +174,32 @@ const accordionItems = [
 			<a href={`usecase/${slide.slug}`} >Read case Studies</a>
 		</div>
 	);  
+	
+	const renderCustomSlide_four = (slide, index) => (
+		<a style={{ textDecoration: 'none' }} href={`blog/${slide.slug}`} className="slider_4_card_4 card">
+			<img src={`${folderPath}blogs/${slide.slider_img}`}/>
+			<div className={`content ${index % 2 === 0 ? 'cardbg4' : ''}`}>
+				<img className="shadow-sm" src={`${folderPath}blogs/${slide.slider_icon}`} width={50} height={50} />	
+				<h5>{slide.slider_title}</h5>
+				<p>{slide.slider_desc}
+				</p>
+				<div className="ul">
+				
+				{(() => {
+							// Check if home is defined and has the property section_5_card1_multiple_content
+							if (typeof slide.slider_tags === 'string') {
+							const slider_tags = slide.slider_tags.split(',');
+							return slider_tags.map((content2, index) => (
+								<small className="li" key={index}>{content2.trim()}</small> // Trim whitespace
+							));
+							} else {
+							return <small></small>; // Fallback when content is undefined
+							}
+				})()}
+				</div>
+			</div>
+		</a>
+	);	
 	
 	const renderCustomSlide_five = (slide, index) => (
 		<>
@@ -268,31 +296,60 @@ const accordionItems = [
 	
 	</section>
 
-	<section className="homepage_4 mt-0 pt-0">
-	
-		<div className="container mt-0">
-		
-			<h4 className="homepage_4_title_1">Read <span>Use Cases</span></h4>
+	{Udata && Udata.length > 0 && (
+		<section className="homepage_4 mt-0 pt-0">
+			<div className="container mt-0">
+			<h4 className="homepage_4_title_1">
+				Read <span>Use Cases</span>
+			</h4>
 			<p className="homepage_4_sub_title_1">Based on Real incidents</p>
 		
 			<div className="rightbox">
-				<a className="mt-0 text-white">View All Use Cases</a> <img src={keyboard_double_arrow_right} width={20} height={20} />
+				<a className="mt-0 text-white">View All Use Cases</a> 
+				<img src={keyboard_double_arrow_right} width={20} height={20} />
 			</div>
-			
-		</div>
+			</div>
 		
+			<CustomSwiper 
+			slides={Udata}
+			spaceBetween={10}
+			slidesPerView={4}
+			renderSlide={renderCustomSlide_three}
+			swiperClassName="swiper1"
+			swiperClassChildName=""
+			swiper_navClass="custom-navigation1"
+			swiperContainer=""
+			/>
+		</section>
+	)}
+
+	{Bdata && Bdata.length > 0 && (
+	<section className="homepage_4 mt-0 pt-0">
+		<div className="container mt-0">
+		<h4 className="homepage_4_title_1">
+			Read <span>Blogs</span>
+		</h4>
+		<p className="homepage_4_sub_title_1">Based on Real incidents</p>
+	
+		<div className="rightbox">
+			<a href="projects" className="mt-0 text-white">View All Blogs</a> 
+			<img src={keyboard_double_arrow_right} width={20} height={20} />
+		</div>
+		</div>
+	
 		<CustomSwiper 
-		slides={Udata}
+		slides={Bdata}
 		spaceBetween={10}
-		slidesPerView={6}
-		renderSlide={renderCustomSlide_three}
+		slidesPerView={4}
+		renderSlide={renderCustomSlide_four}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName=""
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
-	
 	</section>
+	)}
+
 
 	<section className="services_3 mb-4">
 	
@@ -412,7 +469,7 @@ const accordionItems = [
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-1"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>

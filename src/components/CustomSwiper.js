@@ -70,20 +70,36 @@ export default function CustomSwiper({
         spaceBetween={spaceBetween} // Spacing between slides
         slidesPerView={slidesPerView} // Number of slides to show per view
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: slidesPerView,
-            spaceBetween: spaceBetween,
-          },
-        }}
+		breakpoints={{
+			320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			},
+			480: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			},
+			640: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			},
+			768: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+			},
+			1024: {
+			slidesPerView: 3,
+			spaceBetween: 40,
+			},
+			1280: {
+			slidesPerView: slidesPerView,
+			spaceBetween: spaceBetween,
+			},
+			1440: {
+			slidesPerView: slidesPerView,
+			spaceBetween: spaceBetween,
+			},
+		}}
         className={swiperClassName}
       >
         {slides.map((slide, index) => (

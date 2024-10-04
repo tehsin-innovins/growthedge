@@ -294,10 +294,10 @@ function BlogDetails() {
 		<CustomSwiper 
 		slides={Udata}
 		spaceBetween={10}
-		slidesPerView={6}
+		slidesPerView={4}
 		renderSlide={renderCustomSlide_three}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName=""
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -320,7 +320,7 @@ function BlogDetails() {
 		<CustomSwiper 
 		slides={Bdata}
 		spaceBetween={10}
-		slidesPerView={6}
+		slidesPerView={4}
 		renderSlide={renderCustomSlide_four}
 		swiperClassName="swiper1"
 		swiperClassChildName=""

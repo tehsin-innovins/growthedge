@@ -381,8 +381,10 @@ body{
 	padding-right:5px;
 }
 
-.slider_2_card_2{
-	position:relative;
+.slider_2_card_2 {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slider_2_card_2 .bgi1{
@@ -452,9 +454,14 @@ body{
 	transform:translate(-50%,-50%);
 }
 
+.slider_2_card_2:hover {
+  transform: scale(1.02); /* Slight zoom for the entire container */
+  transition: transform 0.3s ease-in-out;
+}
+
 .slider_3_card_3{
 	position:relative;
-	height:240px;
+	height:auto;
 	border:0px;
 }
 
@@ -470,7 +477,7 @@ body{
 .cardbg3 .ct{
 	color:#ffffff!important;
 	font-family: Raleway;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 500;
 	line-height: 14.09px;
 	text-align: left;
@@ -479,7 +486,7 @@ body{
 .cardbg3 p{
 	color:#ffffff!important;
 	font-family: Roboto Flex;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 600;
 	line-height: 33.6px;
 	text-align: left;
@@ -492,7 +499,7 @@ body{
 .cardbg3 p span{
 	color:#ffffff!important;
 	font-family: Roboto Flex;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 19.6px;
 	text-align: left;		
@@ -503,7 +510,7 @@ body{
 .cardbg3 p small{
 	color:#ffffff!important;
 	font-family: Roboto Flex;
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: 400;
 	line-height: 19.6px;
 	text-align: left;				
@@ -513,7 +520,7 @@ body{
 .slider_3_card_3_ .ct{
 	color: #242330;
 	font-family: Raleway;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 500;
 	line-height: 14.09px;
 	text-align: left;
@@ -523,7 +530,7 @@ body{
 .slider_3_card_3_ p{
 	color: #4E4B66;
 	font-family: Roboto Flex;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 600;
 	line-height: 24px;
 	text-align: left;
@@ -537,7 +544,7 @@ body{
 .slider_3_card_3_ p span{
 	color: #BC66EE;
 	font-family: Roboto Flex;
-	font-size: 14px;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 19.6px;
 	text-align: left;		
@@ -547,7 +554,7 @@ body{
 .slider_3_card_3_ p small{
 	color: #4E4B66;
 	font-family: Roboto Flex;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 400;
 	line-height: 19.6px;
 	text-align: left;				
@@ -672,7 +679,7 @@ body{
 
 .slider_4_card_4{
 	position:relative;
-	height:300px;
+	height:auto;
 	padding:0px;
 	margin:0px;
 	border:0px;
@@ -698,6 +705,7 @@ body{
 .slider_4_card_4_ .content{
 	position:relative;	
 	padding:7px;
+	height:120px;
 }
 
 .slider_4_card_4 .content img,
@@ -714,7 +722,7 @@ body{
 .cardbg4{
 	background: linear-gradient(180deg, #462576 0%, #8245DC 100%);
 	width:100%;
-	height:150px;
+	height:120px;
 	padding:5px;
 	border-radius:0px 0px 10px 10px;
 	padding:0px;
@@ -784,11 +792,11 @@ body{
 .slider_4_card_4 p,
 .slider_4_card_4_ p{
 	font-family: Roboto Flex;
-	font-size: 9px;
+	font-size: 11px;
 	font-weight: 300;
 	line-height: 15px;
 	text-align: left;
-	color: #686868;
+	color: #000000;
 }
 
 .slider_4_card_4 .ul,
@@ -801,7 +809,7 @@ body{
 .slider_4_card_4 .ul .li,
 .slider_4_card_4_ .ul .li{
 	font-family: Roboto Flex;
-	font-size: 8px;
+	font-size: 10px;
 	padding-right:10px!important;
 	padding-bottom:0px!important;
 	padding-top:0px!important;
@@ -809,7 +817,7 @@ body{
 	margin-bottom:-10px!important;	
 	font-weight: 400;
 	text-align: left;	
-	color: #A2A2A2;
+	color: #4e4b66;
 }
 
 .slider_5_card_5{
@@ -856,22 +864,48 @@ body{
 
 .slider_2_card_2_services{
 	position:relative;
+	overflow: hidden;
+	border-radius:15px;
+	transition: transform 0.5s ease-in-out;
 }
 
 .slider_2_card_2_services .bgi1{
 	width:100%;
 	border-radius:15px 15px 0px 0px;
+	display: block;
+	transition: transform 0.5s ease-in-out;	
 }
 
 .slider_2_card_2_services .bgi2{
 	width:100%;
+	height:300px;
 	border-radius:0px 0px 15px 15px;
+	display: block;
+	transition: transform 0.5s ease-in-out;
+}
+
+.slider_2_card_2_services:hover .bgi1,
+.slider_2_card_2_services:hover .bgi2 {
+	border-radius:15px 15px 0px 0px;
+  transform: scale(1.1); /* Zoom effect */
+  transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
 .slider_2_card_2_services .contentbox{
 	position:absolute;
 	top:0px;
 	padding:20px;
+	transition: opacity 0.5s ease-in-out;	
+}
+
+.slider_2_card_2_services:hover .contentbox {
+  opacity: 1; /* Ensures the content is fully visible */
+}
+
+/* Optional: Add a slight zoom to the container */
+.slider_2_card_2_services:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
 }
 
 .slider_2_card_2_services .contentbox .title{

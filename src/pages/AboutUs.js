@@ -254,10 +254,10 @@ function AboutUs() {
 		<CustomSwiper 
 		slides={Udata}
 		spaceBetween={10}
-		slidesPerView={6}
+		slidesPerView={4}
 		renderSlide={renderCustomSlide_three}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName=""
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -394,7 +394,7 @@ function AboutUs() {
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-1"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
