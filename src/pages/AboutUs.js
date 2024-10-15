@@ -179,33 +179,8 @@ function AboutUs() {
 	
 	return(
 		<>
-	<section className="services_1">
-	
-		<div className="container">
-			
-			<div className="row align-items-center">
-				
-				<div className="col-12 col-lg-6 col-md-6">
-					
-					<h4>{about.section_1_title} <img src={`${folderPath}aboutus_page/${about.section_1_title_img}`} width={50} height={50} /></h4>
-					<h5>{about.section_1_subtitle}</h5>
-					<h3>{about.section_1_childtitle}</h3>
-					<p>{about.section_1_content}</p>
-					<a href="/" className="btn shadow-sm">Subscribe for service</a>
-					
-				</div>
-				
-				<div className="col-12 col-lg-6 col-md-6">
-					<img src={`${folderPath}aboutus_page/${about.section_1_sideimg}`}/>
-				</div>				
-				
-			</div>
-			
-		</div>
-	
-	</section>
-	
-	<section className="services_2">
+	<br/>
+	<section className="services_2 mt-4 mt-4">
 	
 		<div className="container">
 			<div className="row">
@@ -237,6 +212,34 @@ function AboutUs() {
 		</div>
 	
 	</section>
+	
+	<section className="services_1 pt-2">
+	
+		<div className="container">
+			
+			<div className="row align-items-center">
+				
+				<div className="col-12 col-lg-6 col-md-6">
+					
+					<h4>{about.section_1_title} <img src={`${folderPath}aboutus_page/${about.section_1_title_img}`} width={50} height={50} /></h4>
+					<h5>{about.section_1_subtitle}</h5>
+					<h3>{about.section_1_childtitle}</h3>
+					<p>{about.section_1_content}</p>
+					<a href="/" className="btn shadow-sm">Subscribe for service</a>
+					
+				</div>
+				
+				<div className="col-12 col-lg-6 col-md-6">
+					<img src={`${folderPath}aboutus_page/${about.section_1_sideimg}`}/>
+				</div>				
+				
+			</div>
+			
+		</div>
+	
+	</section>
+	
+
 	
 	<section className="homepage_4 mt-0 pt-0">
 	

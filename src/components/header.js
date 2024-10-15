@@ -232,7 +232,7 @@ function Header(){
         role="dialog"
         style={{ display: showBottomsheet_two ? 'block' : 'none', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
       >
-        <div className="modal-dialog modal-dialog-scrollable modal-fullscreen modal-bottom-sheet  modal-bottom-sheet1_" role="document">
+        <div className="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered modal-bottom-sheet2_" role="document">
           <div className="modal-content">
 
             <div className="modal-header">
@@ -298,7 +298,7 @@ function Header(){
 								{errors.email && <span style={{ color: 'white' }}>{errors.email}</span>}
 							</div>
 							<div class="mb-3 mt-3">
-								<textarea className="custom-textarea form-control" value={formData.msg} style={{ borderColor: errors.msg ? 'red' : '' }} onChange={handleChange} rows="5" id="msg" name="msg" placeholder="Put your thoughts Here!"></textarea>
+								<textarea className="custom-textarea form-control" value={formData.msg} style={{ borderColor: errors.msg ? 'red' : '' }} onChange={handleChange} rows="4" id="msg" name="msg" placeholder="Put your thoughts Here!"></textarea>
 								{errors.msg && <span style={{ color: 'white' }}>{errors.msg}</span>}
 							</div>  
 							<button type="submit" className="btn mb-4">CONNECT NOW</button>

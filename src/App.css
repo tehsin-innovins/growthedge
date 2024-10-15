@@ -1313,3 +1313,117 @@ body{
 	text-align: left;
 	color:#ffffff;
 }
+.modal-bottom-sheet2_{
+	border:0px;
+	border-radius:5px;
+}
+.modal-bottom-sheet2_ .modal-content .modal-header,
+.modal-bottom-sheet2_ .modal-content .modal-body{
+	background: #2B2A2C!important;	
+	border:0px!important;
+	outline:0px;
+}
+
+.modal-bottom-sheet2_ .modal-title{
+	color:#ffffff!important;
+	width:100%;
+	text-align:center!important;
+}
+
+.modal-bottom-sheet2_ .btn-close1{
+	position:absolute;
+	font-size:18px;
+	top:20px;
+	right:20px;
+	color:#ffffff!important;
+}
+
+.modal-bottom-sheet2_ .modal-title span{
+	color:#BC66EE!important;
+}
+
+.modal-bottom-sheet2_ .btn{
+	width: 100%;
+	color:#ffffff;
+	padding-top:10px;
+	padding-bottom:10px;
+	border-radius: 8px;
+	background: #AA81FB;
+}
+
+.modal-bottom-sheet2_ .contact_img{
+	margin-top:55px;
+	width:100%;
+}
+
+.modal-bottom-sheet2_ .title{
+	font-family: Raleway;
+	font-size: 18px;
+	font-weight: 800;
+	line-height: 20.83px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: center;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet2_ .h4{
+	font-family: Raleway;
+	font-size: 22px;
+	font-weight: 700;
+	margin-top:50px;
+	line-height: 25.18px;
+	letter-spacing: 0.20000000298023224px;
+	text-align: left;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet2_ .h5{
+	font-family: Raleway;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 25.83px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;
+}
+
+.modal-bottom-sheet2_ .h3{
+	font-family: Raleway;
+	font-size: 30px;
+	font-weight: 800;
+	line-height: 37.57px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#BB65EA;
+}
+
+.modal-bottom-sheet2_ .h4_{
+	margin-top:35px;
+	font-family: Roboto Flex;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28.13px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+.modal-bottom-sheet2_ .p_{
+	font-family: Raleway;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 16.44px;
+	letter-spacing: 0.11749999970197678px;
+	text-align: left;
+	color:#ffffff;	
+}
+
+.modal-bottom-sheet2_ .form_h5{
+	font-family: Roboto Flex;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0.10000000149011612px;
+	text-align: left;
+	color:#ffffff;	
+}
