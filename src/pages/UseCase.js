@@ -65,10 +65,10 @@ import CustomSwiper from '../components/CustomSwiper';
 import Pagination from '../components/Pagination';
 
 function UseCase() {
-	const [is_blog, setIs_blog] = useState("d-none");
-	const [is_Use_Cases,setis_Use_Cases] = useState("");
-	const [is_blog_active, setIs_blog_active] = useState("");
-	const [is_Use_Cases_active,setis_Use_Cases_active] = useState("btn-active");
+	const [is_blog, setIs_blog] = useState("");
+	const [is_Use_Cases,setis_Use_Cases] = useState("d-none");
+	const [is_blog_active, setIs_blog_active] = useState("btn-active");
+	const [is_Use_Cases_active,setis_Use_Cases_active] = useState("");
 	const [ucbdata,setUcbdata] = useState([]);
 	const [Udata,setUdata] = useState([]);  
 	const [Bdata,setBdata] = useState([]);  
@@ -191,9 +191,9 @@ function UseCase() {
 					</div>
 		
 					<div className="col-lg-4 col-md-4">
-						<div className="d-flex">
+						<div className="d-flex uctb">
+						<a className={`flex-fill btn ${is_blog_active}`} onClick={setUseCase}>Blog</a>						
 						<a className={`flex-fill btn ${is_Use_Cases_active}`} onClick={setBlog}>Use Cases</a>
-						<a className={`flex-fill btn ${is_blog_active}`} onClick={setUseCase}>Blog</a>
 						</div>
 					</div>
 					
