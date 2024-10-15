@@ -47,13 +47,13 @@ body{
 .dasktop-menu .call{
 	margin-top:17px;
 	margin-left:0px;
-	margin-right:5px;
+	margin-right:13px;
 	float:right;
 }
 
 .dasktop-menu .whatsapp{
 	margin-top:17px;	
-	margin-left:5px;
+	margin-left:13px;
 	margin-right:10px;
 	float:right;
 }
@@ -77,11 +77,38 @@ body{
 	text-decoration:none;
 	color:#ffffff;	
 	font-family:Raleway;
+	font-weight:400;
+	font-size:14px;
+	line-height:18.78px;
+	letter-spacing:0.2px;	
+	text-transform:uppercase;
+	transition:linear 0.5s; 
+}
+
+.dasktop-menu a:hover{
+	text-decoration:none;
+	color:#ffffff;	
+	font-family:Raleway;
 	font-weight:600;
 	font-size:14px;
 	line-height:18.78px;
 	letter-spacing:0.2px;	
 	text-transform:uppercase;
+}
+
+.dasktop-menu .active{
+	text-decoration:none;
+	color:#ffffff;	
+	font-family:Raleway;
+	font-weight:600;
+	font-size:14px;
+	line-height:18.78px;
+	letter-spacing:0.2px;	
+	text-transform:uppercase;
+}
+
+.dasktop-menu .logo{
+	margin-top:-7px;
 }
 
 .dasktop-footer{
@@ -383,6 +410,7 @@ body{
 
 .slider_2_card_2 {
   position: relative;
+  max-width:240px;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }

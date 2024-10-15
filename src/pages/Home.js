@@ -453,7 +453,7 @@ function Home() {
 		
 		<CustomSwiper 
 		slides={SERdata}
-		spaceBetween={15}
+		spaceBetween={50}
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
 		swiperClassName="swiper1"
@@ -539,10 +539,10 @@ function Home() {
 					<h4 className="mt-4" dangerouslySetInnerHTML={{ __html: home.section_4_title1 }} ></h4>
 					<p className="sub_title">{home.section_4_subtitle1}</p>
 					<h5>{home.section_4_childtitle1}</h5>
-					<p className="mb-0 child_title">{home.section_4_child_subtitle1}</p>
+					<p className="mb-0 child_title d-none">{home.section_4_child_subtitle1}</p>
 					<p>{home.section_4_child_content1}</p>
 					<h5>{home.section_4_childtitle2}</h5>
-					<p className="mb-0 child_title">{home.section_4_child_subtitle2}</p>
+					<p className="mb-0 child_title d-none">{home.section_4_child_subtitle2}</p>
 					<p>{home.section_4_child_content2}</p>
 					
 				</div>

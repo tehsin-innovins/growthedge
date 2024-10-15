@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';        // Bootstrap CSS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';   // Bootstrap JavaScript
 import { Modal } from 'bootstrap';                    // Import the Modal component
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link,NavLink } from "react-router-dom";
 import logo from '../assets/home/logo.svg'; // Import the SVG file
 import call from '../assets/home/call.svg'; // Import the SVG file
 import whatsapp from '../assets/home/whatsapp.svg'; // Import the SVG file
@@ -194,28 +194,28 @@ function Header(){
 		<div className="container">
 			<div className="row">
 				<div className="col-md-1 col-6">
-					<img src={logo} alt="Logo" width={130} height={60} />
+					<img src={logo} alt="Logo" width={150} height={75} className="logo"/>
 				</div>
 				<div className="col-md-10 col-12">
 					<ul>
 						<li>
-							<Link to="/">Home</Link>
+							<NavLink exact to="/" activeClassName="active">Home</NavLink>
 						</li>
 						<li>
 							<Link onClick={handleShow_one}>Services</Link>
 						</li>
 						<li>
-							<Link to="/projects">Case Studies / Blogs</Link>
-						</li>						
+							<NavLink to="/projects" activeClassName="active">Case Studies / Blogs</NavLink>
+						</li>                        
 						<li>
-							<Link to="/about-us">About Us</Link>
+							<NavLink to="/about-us" activeClassName="active">About Us</NavLink>
 						</li>
 						<li>
 							<Link onClick={handleShow_two}>Contact Us</Link>
-						</li>			
+						</li>            
 						<li>
 							<Link onClick={ShowEBookModal}>Free Ebook</Link>
-						</li>						
+						</li>                        
 					</ul>
 				</div>
 				<div className="col-md-1 col-6">
