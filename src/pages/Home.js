@@ -400,31 +400,31 @@ function Home() {
 					<div className="row">
 					
 						<div className="col-12">
-							<h4 className="title">{home.section_2_title2}</h4>
-							<h5 className="sub_title">{home.section_2_subtitle2}</h5>
+							<h4 className="title f24">{home.section_2_title2}</h4>
+							<h5 className="sub_title f20">{home.section_2_subtitle2}</h5>
 						</div>
 						
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title_">{home.section_2_m_title1} <img src={`${folderPath}home_page/${home.section_2_m_icon1}`} width={20} height={20} /></h5>
-							<p className="cp_">{home.section_2_m_content1}</p>
+							<h5 className="child_title_ f24">{home.section_2_m_title1} <img src={`${folderPath}home_page/${home.section_2_m_icon1}`} width={20} height={20} /></h5>
+							<p className="cp_ f14">{home.section_2_m_content1}</p>
 							<div className="circle_"></div>
 						</div>
 
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title_">{home.section_2_m_title2} <img src={`${folderPath}home_page/${home.section_2_m_icon2}`} width={20} height={20} /></h5>
-							<p className="cp_">{home.section_2_m_content2}</p>
+							<h5 className="child_title_ f24">{home.section_2_m_title2} <img src={`${folderPath}home_page/${home.section_2_m_icon2}`} width={20} height={20} /></h5>
+							<p className="cp_ f14">{home.section_2_m_content2}</p>
 							<div className="circle_"></div>							
 						</div>
 						
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title_">{home.section_2_m_title3} <img src={`${folderPath}home_page/${home.section_2_m_icon3}`} width={20} height={20} /></h5>
-							<p className="cp_">{home.section_2_m_content3}</p>
+							<h5 className="child_title_ f24">{home.section_2_m_title3} <img src={`${folderPath}home_page/${home.section_2_m_icon3}`} width={20} height={20} /></h5>
+							<p className="cp_ f14">{home.section_2_m_content3}</p>
 							<div className="circle_"></div>						
 						</div>
 
 						<div className="col-lg-3 col-md-3">
-							<h5 className="child_title_">{home.section_2_m_title4} <img src={`${folderPath}home_page/${home.section_2_m_icon4}`} width={20} height={20} /></h5>
-							<p className="cp_">{home.section_2_m_content4}</p>
+							<h5 className="child_title_ f24">{home.section_2_m_title4} <img src={`${folderPath}home_page/${home.section_2_m_icon4}`} width={20} height={20} /></h5>
+							<p className="cp_ f14">{home.section_2_m_content4}</p>
 							<div className="circle_"></div>						
 						</div>						
 						

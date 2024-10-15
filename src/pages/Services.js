@@ -113,7 +113,7 @@ function Services() {
 		<h5 dangerouslySetInnerHTML={{ __html: title }}></h5>
 		<span><FontAwesomeIcon icon={isOpen ? faMinus : faPlus} /></span>
 		</div>
-		{isOpen && <div className="accordion-content" dangerouslySetInnerHTML={{ __html: content }}></div>}
+		{isOpen && <div className="accordion-content f14" dangerouslySetInnerHTML={{ __html: content }}></div>}
 	</div>
   );
 	
@@ -204,7 +204,7 @@ const accordionItems = [
 	const renderCustomSlide_five = (slide, index) => (
 		<>
 		<h5 className="child_title_ mt-3">{slide.title} <img src={`${folderPath}how-we-slider/${slide.pic}`} width={20} height={20} /></h5>
-		<p className="cp_">{slide.s_desc}</p>
+		<p className="cp_ f14">{slide.s_desc}</p>
 		<div className="circle_"></div>
 		</>
 	);  
@@ -240,8 +240,8 @@ const accordionItems = [
 					<h4>{sdata.section_1_title1}<img src={trending} width={50} height={50} /></h4>
 					<h5>{sdata.section_1_title2}</h5>
 					<h3>{sdata.section_1_title3}</h3>
-					<p>{sdata.section_1_content}</p>
-					<a href={sdata.section_1_subscribe_link} className="btn shadow-sm">Subscribe for service</a>
+					<p className="f14">{sdata.section_1_content}</p>
+					<a href={sdata.section_1_subscribe_link} className="btn btn-subscribe shadow-sm">Subscribe for service</a>
 					
 				</div>
 				
@@ -255,13 +255,13 @@ const accordionItems = [
 	
 	</section>
 	
-	<section className="services_2">
+	<section className="services_2 pt-0">
 	
 		<div className="container">
 			<div className="row align-items-center">
 				<div className="col-12 col-lg-6 col-md-6">
-					<h4>{sdata.section_2_title1}</h4>
-					<h5 dangerouslySetInnerHTML={{ __html: sdata.section_2_subtitle1 }}></h5>
+					<h4 className="f32">{sdata.section_2_title1}</h4>
+					<h5 className="f22" dangerouslySetInnerHTML={{ __html: sdata.section_2_subtitle1 }}></h5>
 					<div className="card p-2">
 						<img src={analytics}/>
 						<h5>Figures will help you figure out!</h5>
@@ -271,23 +271,23 @@ const accordionItems = [
 				</div>
 				<div className="col-12 col-lg-6 col-md-6">
 					<h4 dangerouslySetInnerHTML={{ __html: sdata.section_2_title2 }}></h4>
-					<h5>{sdata.section_2_subtitle2}</h5>
+					<h5 className="f22">{sdata.section_2_subtitle2}</h5>
 
 					<p><span>{sdata.section_2_multiple_title_1}</span></p>
 					<p>{sdata.section_2_multiple_content_1}</p>
-					<a href={sdata.section_2_multiple_link_1}>Read more</a>
+					<a className="d-none" href={sdata.section_2_multiple_link_1}>Read more</a>
 					
 					<p><span>{sdata.section_2_multiple_title_2}</span></p>
 					<p>{sdata.section_2_multiple_content_2}</p>
-					<a href={sdata.section_2_multiple_link_2}>Read more</a>
+					<a className="d-none" href={sdata.section_2_multiple_link_2}>Read more</a>
 					
 					<p><span>{sdata.section_2_multiple_title_3}</span></p>
 					<p>{sdata.section_2_multiple_content_3}</p>
-					<a href={sdata.section_2_multiple_link_3}>Read more</a>
+					<a className="d-none" href={sdata.section_2_multiple_link_3}>Read more</a>
 					
 					<p><span>{sdata.section_2_multiple_title_4}</span></p>
 					<p>{sdata.section_2_multiple_content_4}</p>
-					<a href={sdata.section_2_multiple_link_4}>Read more</a>
+					<a className="d-none" href={sdata.section_2_multiple_link_4}>Read more</a>
 
 				</div>
 				
@@ -359,8 +359,8 @@ const accordionItems = [
 			
 				<div className="col-12 col-md-6 col-lg-6">
 					
-					<h4 className="h4_title" dangerouslySetInnerHTML={{ __html: sdata.section_3_title1 }} ></h4>
-					<h5 className="h5_title">{sdata.section_3_subtitle1}</h5>
+					<h4 className="h4_title f32" dangerouslySetInnerHTML={{ __html: sdata.section_3_title1 }} ></h4>
+					<h5 className="h5_title f22">{sdata.section_3_subtitle1}</h5>
 					
 <div className="accordion">
       {accordionItems.map((item, index) => (
@@ -443,7 +443,7 @@ const accordionItems = [
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_five}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName="swipe_slider_1_"
 		swiper_navClass="custom-navigation"
 		swiperContainer=""
 		/>

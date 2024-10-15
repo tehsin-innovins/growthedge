@@ -366,6 +366,11 @@ body{
 }
 
 .swipe_slider_1{
+	min-width:312px!important;
+	min-height:430px!important;
+}
+
+.swipe_slider_1_{
 	width:220px!important;
 }
 .slider_1_card_1{
@@ -381,8 +386,8 @@ body{
 	margin-top:10px;
 	margin-bottom:5px;
 	font-family: Raleway;
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 16px;
+	font-weight: 600;
 	line-height: 23.48px;
 	letter-spacing: 0.20000000298023224px;
 	text-align: left;	
@@ -392,8 +397,8 @@ body{
 .slider_1_card_1 .content{
 	margin:0px;
 	font-family: Roboto Flex;
-	font-size: 12px;
-	font-weight: 500;
+	font-size: 14px;
+	font-weight: 300;
 	line-height: 18px;
 	letter-spacing: 0.015em;
 	text-align: left;	
@@ -401,11 +406,11 @@ body{
 }
 
 .slider_1_card_1 .content span{
-	font-family: Roboto Flex;
-	font-size: 12spx;
+/*	font-family: Roboto Flex;
+	font-size: 12px;
 	font-weight: 300;
-	color:#BC66EE;
-	padding-right:5px;
+	color:#BC66EE; 
+	padding-right:5px; */
 }
 
 .slider_2_card_2 {
