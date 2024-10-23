@@ -262,7 +262,7 @@ const accordionItems = [
 				<div className="col-12 col-lg-6 col-md-6">
 					<h4 className="f32">{sdata.section_2_title1}</h4>
 					<h5 className="f22" dangerouslySetInnerHTML={{ __html: sdata.section_2_subtitle1 }}></h5>
-					<div className="card p-2">
+					<div className="card mt-4 p-2">
 						<img src={analytics}/>
 						<h5>Figures will help you figure out!</h5>
 						<p>was said by a Wise man Once -</p>
@@ -316,7 +316,7 @@ const accordionItems = [
 			slidesPerView={4}
 			renderSlide={renderCustomSlide_three}
 			swiperClassName="swiper1"
-			swiperClassChildName=""
+			swiperClassChildName="m-2"
 			swiper_navClass="custom-navigation1"
 			swiperContainer=""
 			/>
@@ -343,7 +343,7 @@ const accordionItems = [
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_four}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -443,7 +443,7 @@ const accordionItems = [
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_five}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1_"
+		swiperClassChildName="swipe_slider_1_ m-2"
 		swiper_navClass="custom-navigation"
 		swiperContainer=""
 		/>
@@ -469,7 +469,7 @@ const accordionItems = [
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
 		swiperClassName="swiper1"
-		swiperClassChildName="m-1"
+		swiperClassChildName="swipe_slider_1_service m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>

@@ -297,7 +297,7 @@ function BlogDetails() {
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_three}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -323,7 +323,7 @@ function BlogDetails() {
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_four}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>

@@ -196,7 +196,7 @@ function Header(){
 				<div className="col-md-1 col-6">
 					<img src={logo} alt="Logo" width={150} height={75} className="logo"/>
 				</div>
-				<div className="col-md-10 col-12">
+				<div className="col-md-9 col-12">
 					<ul>
 						<li>
 							<NavLink exact to="/" activeClassName="active">Home</NavLink>
@@ -218,7 +218,7 @@ function Header(){
 						</li>                        
 					</ul>
 				</div>
-				<div className="col-md-1 col-6">
+				<div className="col-md-2 col-6">
 					<a href={`https://wa.me/${common_set.whatsapp_no}`}><img className="whatsapp" src={whatsapp} alt="whatsapp" width={25} height={25} /></a>
 					<a href={`tel:+${common_set.contact_no}`}><img className="call" src={call} alt="call" width={25} height={25} /></a>
 				</div>
@@ -242,7 +242,7 @@ function Header(){
 			  </span>
             </div>
 
-            <div className="modal-body p-0">
+            <div className="modal-body p-3">
 	
 			<div className="container pb-4">
 			

@@ -61,7 +61,7 @@ body{
 .dasktop-menu ul{
 	list-style:none;
 	display:flex;
-	justify-content:center;
+	justify-content:end;
 	margin-top:13px;
 	width:100%;
 }
@@ -265,9 +265,23 @@ body{
 }
 
 /* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1340px){
+  .swiper1 {
+    max-width: 92vw; /* Adjust width or any other style here */
+  }
+}
+
+/* Target screen sizes between 1399px and 1400px */
+@media (min-width: 1360px){
+  .swiper1 {
+    max-width: 91.50vw; /* Adjust width or any other style here */
+  }
+}
+
+/* Target screen sizes between 1399px and 1400px */
 @media (min-width: 1366px){
   .swiper1 {
-    max-width: 90.20vw; /* Adjust width or any other style here */
+    max-width: 91.20vw; /* Adjust width or any other style here */
   }
 }
 
@@ -281,7 +295,7 @@ body{
 /* Target screen sizes between 1399px and 1400px */
 @media (min-width: 1600px){
   .swiper1 {
-    max-width: 90vw; /* Adjust width or any other style here */
+    max-width: 90.50vw; /* Adjust width or any other style here */
   }
   .custom-navigation1{
 	display:Flex;
@@ -370,6 +384,11 @@ body{
 	min-height:430px!important;
 }
 
+.swipe_slider_1_service{
+	width:340px!important;
+	height:460px!important;
+}
+
 .swipe_slider_1_{
 	width:220px!important;
 }
@@ -415,20 +434,19 @@ body{
 
 .slider_2_card_2 {
   position: relative;
-  max-width:240px;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
 }
 
 .slider_2_card_2 .bgi1{
 	width:100%;
-	height:110px;
+	height:160px;
 	border-radius:15px 15px 0px 0px;
 }
 
 .slider_2_card_2 .bgi2{
 	width:100%;
-	height:220px;
+	height:300px;
 	border-radius:0px 0px 15px 15px;
 }
 
@@ -439,13 +457,13 @@ body{
 }
 
 .slider_2_card_2 .contentbox .title{
-	margin-top:10px;
-	margin-bottom:5px;
+	margin-top:25px;
+	margin-bottom:10px;
 	font-family: Titillium Web;
 	text-transform:uppercase;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: 700;
-	line-height: 23.48px;
+	line-height: 29px;
 	letter-spacing: 0.20000000298023224px;
 	text-align: left;	
 	color:#ffffff;
@@ -454,9 +472,9 @@ body{
 .slider_2_card_2 .contentbox .content{
 	margin:0px;
 	font-family: Titillium Web;
-	font-size: 12px;
+	font-size: 14px;
 	font-weight: 400;
-	line-height: 14px;
+	line-height: 18px;
 	letter-spacing: 0.015em;
 	text-align: left;	
 	color:#ffffff;
@@ -842,7 +860,7 @@ body{
 .slider_4_card_4 .ul .li,
 .slider_4_card_4_ .ul .li{
 	font-family: Roboto Flex;
-	font-size: 10px;
+	font-size: 8px;
 	padding-right:10px!important;
 	padding-bottom:0px!important;
 	padding-top:0px!important;
@@ -886,10 +904,10 @@ body{
 
 .slider_5_card_5 .content{
 	font-family: Roboto Flex;
-	font-size: 9px;
+	font-size: 14px;
 	margin-top:0px;
 	font-weight: 400;
-	line-height: 16.8px;
+	line-height: 18px;
 	letter-spacing: 0.0075em;
 	text-align: left;
 	color:#FFFFFF;	

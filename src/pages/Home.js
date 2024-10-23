@@ -361,7 +361,7 @@ function Home() {
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_first}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName="swipe_slider_1 m-2"
 		swiper_navClass="custom-navigation"
 		swiperContainer=""
 		/>
@@ -457,7 +457,7 @@ function Home() {
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_second}
 		swiperClassName="swiper1"
-		swiperClassChildName="m-1"
+		swiperClassChildName="swipe_slider_1_service m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -741,7 +741,7 @@ function Home() {
 		slidesPerView={5}
 		renderSlide={renderCustomSlide_first_}
 		swiperClassName="swiper1"
-		swiperClassChildName="swipe_slider_1"
+		swiperClassChildName="swipe_slider_1 m-2"
 		swiper_navClass="custom-navigation"
 		swiperContainer=""
 		/>
@@ -767,7 +767,7 @@ function Home() {
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_three}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -793,7 +793,7 @@ function Home() {
 		slidesPerView={4}
 		renderSlide={renderCustomSlide_four}
 		swiperClassName="swiper1"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation1"
 		swiperContainer=""
 		/>
@@ -816,7 +816,7 @@ function Home() {
 		slidesPerView={3}
 		renderSlide={renderCustomSlide_five}
 		swiperClassName="swiper"
-		swiperClassChildName=""
+		swiperClassChildName="m-2"
 		swiper_navClass="custom-navigation"
 		swiperContainer="container"
 		/>

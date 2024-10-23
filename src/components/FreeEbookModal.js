@@ -58,7 +58,7 @@ const FreeEbookModal = () => {
 						
 						
 						<div className="tab-content mb-3">
-						<div className="tab-pane container fade" id="menu1">
+						<div className="tab-pane container active" id="menu1">
 							<p className="mt-3 p">{pop.summary_content}</p>
 							
 							<div className="row">
