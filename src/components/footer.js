@@ -20,52 +20,8 @@ import '../pages/Pages.css';
 import CustomSwiper from '../components/CustomSwiper';
 
 function Footer(){
-	  const [scrollTimeout, setScrollTimeout] = useState(null);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = $(window).scrollTop();
-            const windowHeight = $(window).height();
-            const documentHeight = $(document).height();
-
-            // Check if the user has scrolled to the maximum scroll position
-            if (scrollTop + windowHeight >= documentHeight - 10) { // Allow a 10px buffer
-                $("#highlighted").stop(true, true).fadeIn(200); // Show with fadeIn
-
-                // Clear previous timeout
-                if (scrollTimeout) {
-                    clearTimeout(scrollTimeout);
-                }
-
-                // Set a new timeout to hide the highlighted element after 2 seconds
-                const timeoutId = setTimeout(() => {
-                    $("#highlighted").stop(true, true).fadeOut(200); // Hide the highlighted element
-
-                    // Scroll to a specific position
-                    window.scrollTo({ top: 6600, behavior: 'smooth' }); // Smooth scroll to position
-                }, 2000); // 2000 ms = 2 seconds
-
-                // Update state with the new timeout ID
-                setScrollTimeout(timeoutId);
-            } else {
-                // Hide the highlighted element when scrolling up
-                if ($("#highlighted").is(':visible')) {
-                    $("#highlighted").stop(true, true).fadeOut(200); // Hide with fadeOut
-                }
-            }
-        };
-
-        // Bind the scroll event
-        $(window).on('scroll', handleScroll);
-
-        // Cleanup function to remove event listeners
-        return () => {
-            $(window).off('scroll', handleScroll);
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout); // Clear timeout on unmount
-            }
-        };
-    }, [scrollTimeout]);
+	
+    
   const [contactus,setContactus] = useState([]);
   const [slider1,setSlider1] = useState([]);
   const [SERdata,setSERdata] = useState([]);
@@ -524,7 +480,7 @@ function Footer(){
 	
 </div>			
 			
-			<div className="highlighted_">
+			<div className="highlighted_" style={{background: 'linear-gradient(180deg, #2b2a2c 28%, #BC66EE 168%)'}}>
 				<div className="imgbox">
 				<h5>{common_set.contactus_bottom_text}</h5>
 				<h4>{common_set.contactus_bottom_highlight}</h4>
@@ -580,7 +536,7 @@ function Footer(){
 				</div>
 				
 			</div>	
-			<div className="highlighted_">
+			<div className="highlighted_"  style={{background: 'linear-gradient(180deg, #2b2a2c 28%, #BC66EE 168%)'}}>
 				<div className="imgbox">
 				<h5>its time for a</h5>
 				<h4>level up!</h4>

@@ -285,7 +285,7 @@ function Home() {
 						<h4>{home.section_1_title} <img src={`${folderPath}home_page/${home.section_1_title_img}`} width={20} height={20} /></h4>
 						<h5>{home.section_1_subtitle}</h5>
 						<h4 className="mt-0"><span>{home.section_1_childtitle}</span></h4>
-						<p>{home.section_1_content}</p>
+						<p className="f14">{home.section_1_content}</p>
 					
 						<div className="row mt-4">
 		

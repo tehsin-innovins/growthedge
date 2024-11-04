@@ -391,7 +391,7 @@ function Header(){
 	
 </div>			
 			
-			<div className="highlighted_">
+			<div className="highlighted_" style={{background: 'linear-gradient(180deg, #2b2a2c 28%, #BC66EE 168%)'}}>
 				<div className="imgbox">
 				<h5>{common_set.contactus_bottom_text}</h5>
 				<h4>{common_set.contactus_bottom_highlight}</h4>
@@ -447,8 +447,8 @@ function Header(){
 				</div>
 				
 			</div>	
-			<div className="highlighted_">
-				<div className="imgbox">
+			<div className="highlighted_" style={{background: 'linear-gradient(180deg, #2b2a2c 28%, #BC66EE 168%)'}}>
+				<div className="imgbox text-center">
 				<h5>its time for a</h5>
 				<h4>level up!</h4>
 				</div>
