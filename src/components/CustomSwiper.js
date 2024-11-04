@@ -69,39 +69,38 @@ export default function CustomSwiper({
         modules={[Navigation, Pagination, Scrollbar, A11y]} // Enable Swiper modules
         spaceBetween={spaceBetween} // Spacing between slides
         slidesPerView={slidesPerView} // Number of slides to show per view
-        centeredSlides={true} // Center slides
-        loop={true} // Enable loop mode
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} // Update active index on slide change
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          480: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 40,
-          },
-          1280: {
-            slidesPerView: slidesPerView,
-            spaceBetween: spaceBetween,
-          },
-          1440: {
-            slidesPerView: slidesPerView,
-            spaceBetween: spaceBetween,
-          },
-        }}
+		loop={true} // Enable loop mode
+        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)} // Update active index on slide change
+		breakpoints={{
+			320: {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			},
+			480: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			},
+			640: {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			},
+			768: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+			},
+			1024: {
+			slidesPerView: 3,
+			spaceBetween: 40,
+			},
+			1280: {
+			slidesPerView: slidesPerView,
+			spaceBetween: spaceBetween,
+			},
+			1440: {
+			slidesPerView: slidesPerView,
+			spaceBetween: spaceBetween,
+			},
+		}}
         className={swiperClassName}
       >
         {slides.map((slide, index) => (
